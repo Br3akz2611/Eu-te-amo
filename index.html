@@ -14,70 +14,10 @@
       font-family: 'Poppins', sans-serif;
       text-align: center;
       background-color: #ffe6e6;
-      background-image: url('https://github.com/user-attachments/assets/f8544bb1-4984-48aa-bab1-c5cf73c7b69f'); /* Verifique se a imagem existe */
+      background-image: url('https://github.com/user-attachments/assets/f8544bb1-4984-48aa-bab1-c5cf73c7b69f');
       background-size: cover;
       margin: 0;
       padding: 0;
-    }
-    
-    /* Overlay de Login */
-#login-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.8);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
-  border-radius: 20px;
-}
-
-/* Estilo dos inputs */
-#login-container input {
-  padding: 15px;
-  font-size: 1.2rem;
-  margin: 15px;
-  width: 280px;
-  border: 2px solid #d6336c;
-  border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-#login-container input:focus {
-  border-color: #ff99cc;
-  box-shadow: 0 0 10px rgba(255, 153, 204, 0.6);
-  outline: none;
-}
-
-/* Estilo do botão */
-#login-container button {
-  padding: 12px 25px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  background-color: #d6336c;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
-  margin-top: 10px;
-}
-
-#login-container button:hover {
-  background-color: #ff66b2;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-}
-    #error-message {
-      color: red;
-      margin-top: 10px;
-      display: none;
     }
     
     /* Slider Container */
@@ -90,27 +30,6 @@
       display: none;
     }
     
-    /* Estilo para as setas de navegação abaixo do slider */
-    .nav-arrows {
-      margin-top: 20px;
-    }
-    .nav-arrows span {
-      cursor: pointer;
-      font-size: 24px;
-      font-weight: bold;
-      color: #888;
-      background: rgba(255,255,255,0.7);
-      padding: 10px 20px;
-      margin: 0 10px;
-      border-radius: 5px;
-      transition: 0.3s;
-    }
-    .nav-arrows span:hover {
-      background: rgba(0,0,0,0.8);
-      color: white;
-    }
-    
-    /* Estilos dos slides (imagens e legendas) */
     .image-item {
       background: rgba(255, 182, 193, 0.2);
       padding: 15px;
@@ -120,6 +39,7 @@
       width: 320px;
       text-align: center;
     }
+
     .image-item img {
       width: 100%;
       border-radius: 10px;
@@ -129,6 +49,7 @@
     .image-item img:hover {
       transform: scale(1.05);
     }
+
     .image-item figcaption {
       font-size: 1rem;
       color: #b30000;
@@ -137,119 +58,79 @@
       padding: 8px;
       border-radius: 10px;
       margin-top: 10px;
+      cursor: pointer; /* Adicionado para indicar interatividade */
+      transition: 0.3s ease;
     }
-    /* Destaque para a última legenda (imagem 'beijo') */
-    .last-slide figcaption {
-      font-size: 1.2rem;
-      color: #fff;
-      background: #d6336c;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-    }
-    
-    /* Header que aparece apenas no primeiro slide */
-    .header-slide {
-      margin-bottom: 20px;
-    }
-    .header-slide h1 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 3rem;
-      color: #d6336c;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-      margin-bottom: 10px;
-    }
-    .header-slide p {
-      font-size: 1.2rem;
-      color: #8b0000;
-    }
-    
-    /* Estilos para as legendas ocultas e clique fofo */
-    .hidden-description {
-      display: none;
-      padding: 8px;
-      background-color: #f1c6d8;
-      border-radius: 10px;
-      margin-top: 10px;
-      font-size: 1rem;
-      color: #d6336c;
-      font-weight: bold;
-      transition: all 0.3s ease;
+    .image-item figcaption:hover {
+      background-color: rgba(255, 99, 103, 0.4);
     }
 
-    .description-toggle {
-      cursor: pointer;
-      font-size: 1.2rem;
-      color: #d6336c;
-      text-decoration: underline;
-      margin-top: 10px;
-      transition: color 0.3s ease;
+    .description {
+      display: none; /* Descrições começam ocultas */
+      font-size: 0.9rem;
+      color: #333;
+      padding: 5px;
     }
 
-    .description-toggle:hover {
-      color: #ff66b2;
-    }
-    
   </style>
 </head>
 <body>
-  <!-- Overlay de Login -->
-  <div id="login-container">
-    <p>Digite o apelido que eu mais te chamo (sem espaço) (login) e a nossa data de namoro (dia/mes) (senha) para acessar minha gatinha:</p>
-    <input type="text" id="login-input" placeholder="Login">
-    <input type="password" id="password-input" placeholder="Senha">
-    <button id="login-button">Entrar</button>
-    <p id="error-message">Login ou senha incorretos.</p>
-  </div>
-  
-  <!-- Conteúdo Protegido -->
-  <div id="content" style="display: none;">
-    <!-- Slider -->
-    <div id="slider">
-      <!-- Slide 1 (com título e descrição) -->
-      <div class="slide">
-        <div class="header-slide">
-          <h1>Para o Amor da Minha Vida</h1>
-          <p>Amor, já vai fazer 8 meses que estamos namorando, e desde o início eu nunca deixei de te amar nem por 1 milésimo. Eu te amo muito minha vida, amo cada momento que passamos juntos.</p>
-          <p>Vi no TikTok algumas trends de 200 motivos para te amar, mas era tudo uma cópia da outra. Quis fazer minha versão mesmo.</p>
+  <!-- Conteúdo -->
+  <div id="slider">
+    <!-- Slide 1 -->
+    <div class="slide">
+      <figure class="image-item">
+        <img src="https://github.com/user-attachments/assets/486f2015-767b-4ffc-859c-2544113802e3" alt="São tantos motivos para eu te amar">
+        <figcaption onclick="toggleDescription(this)">
+          <strong>São tantos motivos para eu te amar</strong>
+        </figcaption>
+        <div class="description">
+          <strong>• Eu amo sua companhia</strong> (Ter você ao meu lado deixa meus dias melhores sempre)
         </div>
-        <figure class="image-item">
-          <figcaption><strong>São tantos motivos para eu te amar</strong></figcaption>
-          <img src="https://github.com/user-attachments/assets/486f2015-767b-4ffc-859c-2544113802e3 " alt="São tantos motivos para eu te amar">
-          <p class="description-toggle" onclick="toggleDescription(0)">Clique para ver as descrições</p>
-          <div class="hidden-description" id="description-0">
-            <strong>• Eu amo sua companhia</strong> (Ter você ao meu lado deixa meus dias melhores sempre)<br>
-            <strong>• Eu amo seu modo de agir</strong> (Amo como você é toda carinhosa com todos os animais, um amor de pessoa)<br>
-            <strong>• Eu amo seu beijo</strong> (No nosso primeiro beijo eu estava todo tímido, na mesma hora que eu queria te beijar, eu estava pensando "será que tá tudo bem eu beijar ela já?" Kkkkk)
-          </div>
-        </figure>
-      </div>
-      <!-- Mais slides com o mesmo formato... -->
+        <div class="description">
+          <strong>• Eu amo seu modo de agir</strong> (Amo como você é toda carinhosa com todos os animais, um amor de pessoa)
+        </div>
+        <div class="description">
+          <strong>• Eu amo seu beijo</strong> (No nosso primeiro beijo eu estava todo tímido, na mesma hora que eu queria te beijar, eu estava pensando "será que tá tudo bem eu beijar ela já?" Kkkkk)
+        </div>
+      </figure>
     </div>
     
-    <!-- Setas de navegação (abaixo do slider) -->
-    <div class="nav-arrows">
-      <span onclick="prevSlide()">&#10094; Anterior</span>
-      <span onclick="nextSlide()">Próximo &#10095;</span>
+    <!-- Slide 2 -->
+    <div class="slide">
+      <figure class="image-item">
+        <img src="https://github.com/user-attachments/assets/9d8ffaf7-7cf4-4220-8344-5a2d5a09e41c" alt="Motivos para te amar">
+        <figcaption onclick="toggleDescription(this)">
+          <strong>Motivos para te amar</strong>
+        </figcaption>
+        <div class="description">
+          <strong>• Eu amo seus olhos</strong> (principalmente quando a gente está bem perto e você fica olhando de volta pra mim)
+        </div>
+        <div class="description">
+          <strong>• Eu amo seu cabelo</strong> (principalmente quando você está deitada no meu colo e eu posso fazer carinho em você, enquanto você descansa)
+        </div>
+        <div class="description">
+          <strong>• Eu amo sua boca</strong> (principalmente quando ela está bem perto da minha, que a gente se beija e fica olhando um pro outro)
+        </div>
+      </figure>
     </div>
+
+    <!-- Outros slides seguem o mesmo padrão -->
+    
   </div>
-  
+
   <script>
-    // Lógica do Login
-    const loginCorreto = "minhagostosa";
-    const senhaCorreta = "17/07";
-    document.getElementById("login-button").addEventListener("click", function() {
-      const loginInput = document.getElementById("login-input").value;
-      const passwordInput = document.getElementById("password-input").value;
-      if (loginInput === loginCorreto && passwordInput === senhaCorreta) {
-        document.getElementById("login-container").style.display = "none";
-        document.getElementById("content").style.display = "block";
-        showSlide(slideIndex);
-      } else {
-        document.getElementById("error-message").style.display = "block";
+    // Função para alternar a exibição da descrição ao clicar
+    function toggleDescription(captionElement) {
+      // Seleciona a próxima div .description dentro do mesmo <figure>
+      var descriptions = captionElement.parentElement.getElementsByClassName("description");
+      
+      for (var i = 0; i < descriptions.length; i++) {
+        // Alterna a visibilidade de cada descrição
+        descriptions[i].style.display = descriptions[i].style.display === "none" ? "block" : "none";
       }
-    });
-    
+    }
+
     // Lógica do Slider
     var slideIndex = 0;
     function showSlide(n) {
@@ -268,16 +149,6 @@
     function prevSlide() {
       slideIndex--;
       showSlide(slideIndex);
-    }
-    
-    // Função para mostrar/ocultar as descrições de forma fofa
-    function toggleDescription(index) {
-      var description = document.getElementById('description-' + index);
-      if (description.style.display === 'none' || description.style.display === '') {
-        description.style.display = 'block';
-      } else {
-        description.style.display = 'none';
-      }
     }
   </script>
 </body>
