@@ -74,12 +74,7 @@
       background-color: #ff66b2;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
     }
-    #error-message {
-      color: red;
-      margin-top: 10px;
-      display: none;
-    }
-    
+
     /* Slider Container */
     #slider {
       max-width: 800px;
@@ -109,7 +104,7 @@
       background: rgba(0,0,0,0.8);
       color: white;
     }
-    
+
     /* Estilos dos slides (imagens e legendas) */
     .image-item {
       background: rgba(255, 182, 193, 0.2);
@@ -137,18 +132,8 @@
       padding: 8px;
       border-radius: 10px;
       margin-top: 10px;
-      display: none; /* Escondendo as legendas */
     }
-    .heart {
-      font-size: 24px;
-      color: #d6336c;
-      cursor: pointer;
-      margin-top: 5px;
-    }
-    .reveal {
-      display: block; /* Revela a descrição quando clicado */
-    }
-
+    
     /* Destaque para a última legenda (imagem 'beijo') */
     .last-slide figcaption {
       font-size: 1.2rem;
@@ -158,7 +143,7 @@
       border-radius: 10px;
       box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
     }
-    
+
     /* Header que aparece apenas no primeiro slide */
     .header-slide {
       margin-bottom: 20px;
@@ -173,6 +158,24 @@
     .header-slide p {
       font-size: 1.2rem;
       color: #8b0000;
+    }
+
+    .typing {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: .15em solid orange;
+      width: 0;
+      animation: typing 4s steps(40) 1s 1 normal both;
+    }
+
+    @keyframes typing {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -190,7 +193,7 @@
   <div id="content" style="display: none;">
     <!-- Slider -->
     <div id="slider">
-      <!-- Slide 1 -->
+      <!-- Slide 1 (com título e descrição) -->
       <div class="slide">
         <div class="header-slide">
           <h1>Para o Amor da Minha Vida</h1>
@@ -198,58 +201,27 @@
           <p>Vi no TikTok algumas trends de 200 motivos para te amar, mas era tudo uma cópia da outra. Quis fazer minha versão mesmo.</p>
         </div>
         <figure class="image-item">
+          <figcaption class="typing"><strong>São tantos motivos para eu te amar</strong></figcaption>
           <img src="https://github.com/user-attachments/assets/486f2015-767b-4ffc-859c-2544113802e3 " alt="São tantos motivos para eu te amar">
-          <span class="heart" onclick="revealDescription(this)">❤️</span>
-          <figcaption><strong>• Eu amo sua companhia</strong> (Ter você ao meu lado deixa meus dias melhores sempre)</figcaption>
-          <figcaption><strong>• Eu amo seu modo de agir</strong> (Amo como você é toda carinhosa com todos os animais, um amor de pessoa)</figcaption>
-          <figcaption><strong>• Eu amo seu beijo</strong> (No nosso primeiro beijo eu estava todo tímido, na mesma hora que eu queria te beijar, eu estava pensando "será que tá tudo bem eu beijar ela já?" Kkkkk)</figcaption>
+          <figcaption class="typing"><strong>• Eu amo sua companhia</strong> (Ter você ao meu lado deixa meus dias melhores sempre)</figcaption>
+          <figcaption class="typing"><strong>• Eu amo seu modo de agir</strong> (Amo como você é toda carinhosa com todos os animais, um amor de pessoa)</figcaption>
+          <figcaption class="typing"><strong>• Eu amo seu beijo</strong> (No nosso primeiro beijo eu estava todo tímido, na mesma hora que eu queria te beijar, eu estava pensando "será que tá tudo bem eu beijar ela já?" Kkkkk)</figcaption>
         </figure>
       </div>
-
-      <!-- Slide 2 -->
-      <div class="slide">
-        <figure class="image-item">
-          <img src="https://github.com/user-attachments/assets/9d8ffaf7-7cf4-4220-8344-5a2d5a09e41c" alt="Motivos para te amar">
-          <span class="heart" onclick="revealDescription(this)">❤️</span>
-          <figcaption><strong>• Eu amo seus olhos</strong> (principalmente quando a gente está bem perto e você fica olhando de volta pra mim)</figcaption>
-          <figcaption><strong>• Eu amo seu cabelo</strong> (principalmente quando você está deitada no meu colo e eu posso fazer carinho em você, enquanto você descansa)</figcaption>
-          <figcaption><strong>• Eu amo sua boca</strong> (principalmente quando ela está bem perto da minha, que a gente se beija e fica olhando um pro outro)</figcaption>
-        </figure>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="slide">
-        <figure class="image-item">
-          <img src="https://github.com/user-attachments/assets/b8d7f5e7-a9b7-4722-9d8e-5121746ed204" alt="Motivos para te amar">
-          <span class="heart" onclick="revealDescription(this)">❤️</span>
-          <figcaption><strong>• Eu amo seu carinho</strong> (a forma que você é toda carinhosa comigo, me faz ficar todo bobo)</figcaption>
-          <figcaption><strong>• Eu amo seu amor</strong> (você sempre tenta me mostrar de todas as formas possíveis como me ama, e eu amo isso)</figcaption>
-          <figcaption><strong>• Eu amo seu sorriso</strong> (você fica tão linda sorrindo, meu amor, deveria sorrir mais vezes)</figcaption>
-        </figure>
-      </div>
-
-      <!-- Resto dos slides... -->
-
+      <!-- Demais slides -->
+      <!-- Repita para os outros slides, incluindo a classe 'typing' nas legendas -->
     </div>
-
+    
     <!-- Setas de navegação (abaixo do slider) -->
     <div class="nav-arrows">
       <span onclick="prevSlide()">&#10094; Anterior</span>
       <span onclick="nextSlide()">Próximo &#10095;</span>
     </div>
   </div>
-
+  
   <script>
-    // Função para revelar a descrição
-    function revealDescription(heart) {
-      var descriptions = heart.parentElement.getElementsByTagName('figcaption');
-      for (var i = 0; i < descriptions.length; i++) {
-        descriptions[i].classList.toggle('reveal');
-      }
-    }
-    
     // Lógica do Login
-    const loginCorreto = "minhagostosa";
+    const loginCorreto = "gostosa";
     const senhaCorreta = "17/07";
     document.getElementById("login-button").addEventListener("click", function() {
       const loginInput = document.getElementById("login-input").value;
@@ -273,14 +245,20 @@
         slides[i].style.display = "none";
       }
       slides[slideIndex].style.display = "block";
+      // Aciona a digitação para as legendas
+      const captions = slides[slideIndex].getElementsByClassName('typing');
+      for (let caption of captions) {
+        caption.style.animation = 'typing 4s steps(40) 1s normal both';
+      }
     }
-    
+
     function nextSlide() {
-      showSlide(slideIndex += 1);
+      slideIndex++;
+      showSlide(slideIndex);
     }
-    
     function prevSlide() {
-      showSlide(slideIndex -= 1);
+      slideIndex--;
+      showSlide(slideIndex);
     }
   </script>
 </body>
