@@ -6,17 +6,21 @@
   <title>Eu te amo</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    /* Importação de fontes */
     @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+    
+    /* Estilos gerais */
     body {
       font-family: 'Poppins', sans-serif;
       text-align: center;
       background-color: #ffe6e6;
-      background-image: url('https://github.com/user-attachments/assets/f8544bb1-4984-48aa-bab1-c5cf73c7b69f'); 
+      background-image: url('https://github.com/user-attachments/assets/f8544bb1-4984-48aa-bab1-c5cf73c7b69f'); /* Verifique se a imagem existe */
       background-size: cover;
       margin: 0;
       padding: 0;
     }
-
+    
+    /* Overlay de Login */
     #login-container {
       position: fixed;
       top: 0;
@@ -29,10 +33,11 @@
       justify-content: center;
       align-items: center;
       z-index: 1000;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
       border-radius: 20px;
     }
 
+    /* Estilo dos inputs */
     #login-container input {
       padding: 15px;
       font-size: 1.2rem;
@@ -51,6 +56,7 @@
       outline: none;
     }
 
+    /* Estilo do botão */
     #login-container button {
       padding: 12px 25px;
       font-size: 1.2rem;
@@ -68,27 +74,26 @@
       background-color: #ff66b2;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
     }
-
     #error-message {
       color: red;
       margin-top: 10px;
       display: none;
     }
-
+    
+    /* Slider Container */
     #slider {
       max-width: 800px;
       margin: 20px auto;
       position: relative;
     }
-
     .slide {
       display: none;
     }
-
+    
+    /* Estilo para as setas de navegação abaixo do slider */
     .nav-arrows {
       margin-top: 20px;
     }
-
     .nav-arrows span {
       cursor: pointer;
       font-size: 24px;
@@ -100,12 +105,12 @@
       border-radius: 5px;
       transition: 0.3s;
     }
-
     .nav-arrows span:hover {
       background: rgba(0,0,0,0.8);
       color: white;
     }
-
+    
+    /* Estilos dos slides (imagens e legendas) */
     .image-item {
       background: rgba(255, 182, 193, 0.2);
       padding: 15px;
@@ -114,20 +119,16 @@
       margin: 0 auto;
       width: 320px;
       text-align: center;
-      position: relative;
     }
-
     .image-item img {
       width: 100%;
       border-radius: 10px;
       box-shadow: 2px 2px 10px rgba(0,0,0,0.15);
       transition: transform 0.3s ease-in-out;
     }
-
     .image-item img:hover {
       transform: scale(1.05);
     }
-
     .image-item figcaption {
       font-size: 1rem;
       color: #b30000;
@@ -136,31 +137,19 @@
       padding: 8px;
       border-radius: 10px;
       margin-top: 10px;
+      display: none; /* Escondendo as legendas */
     }
-
-    .heart-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
+    .heart {
       font-size: 24px;
-      color: red;
+      color: #d6336c;
       cursor: pointer;
-      background: transparent;
-      border: none;
+      margin-top: 5px;
+    }
+    .reveal {
+      display: block; /* Revela a descrição quando clicado */
     }
 
-    .heart-btn:focus {
-      outline: none;
-    }
-
-    .description {
-      display: none;
-      background-color: rgba(0, 0, 0, 0.7);
-      color: white;
-      padding: 10px;
-      border-radius: 10px;
-    }
-
+    /* Destaque para a última legenda (imagem 'beijo') */
     .last-slide figcaption {
       font-size: 1.2rem;
       color: #fff;
@@ -169,11 +158,11 @@
       border-radius: 10px;
       box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
     }
-
+    
+    /* Header que aparece apenas no primeiro slide */
     .header-slide {
       margin-bottom: 20px;
     }
-
     .header-slide h1 {
       font-family: 'Dancing Script', cursive;
       font-size: 3rem;
@@ -181,7 +170,6 @@
       text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
       margin-bottom: 10px;
     }
-
     .header-slide p {
       font-size: 1.2rem;
       color: #8b0000;
@@ -197,7 +185,7 @@
     <button id="login-button">Entrar</button>
     <p id="error-message">Login ou senha incorretos.</p>
   </div>
-
+  
   <!-- Conteúdo Protegido -->
   <div id="content" style="display: none;">
     <!-- Slider -->
@@ -207,23 +195,44 @@
         <div class="header-slide">
           <h1>Para o Amor da Minha Vida</h1>
           <p>Amor, já vai fazer 8 meses que estamos namorando, e desde o início eu nunca deixei de te amar nem por 1 milésimo. Eu te amo muito, minha vida, amo cada momento que passamos juntos.</p>
+          <p>Vi no TikTok algumas trends de 200 motivos para te amar, mas era tudo uma cópia da outra. Quis fazer minha versão mesmo.</p>
         </div>
         <figure class="image-item">
-          <button class="heart-btn" onclick="toggleDescription(0)">❤️</button>
-          <figcaption><strong>São tantos motivos para eu te amar</strong></figcaption>
-          <img src="https://github.com/user-attachments/assets/486f2015-767b-4ffc-859c-2544113802e3" alt="São tantos motivos para eu te amar">
-          <figcaption><strong>• Eu amo sua companhia</strong></figcaption>
-          <div class="description">Ter você ao meu lado deixa meus dias melhores sempre</div>
-          <figcaption><strong>• Eu amo seu modo de agir</strong></figcaption>
-          <div class="description">Amo como você é toda carinhosa com todos os animais, um amor de pessoa</div>
+          <img src="https://github.com/user-attachments/assets/486f2015-767b-4ffc-859c-2544113802e3 " alt="São tantos motivos para eu te amar">
+          <span class="heart" onclick="revealDescription(this)">❤️</span>
+          <figcaption><strong>• Eu amo sua companhia</strong> (Ter você ao meu lado deixa meus dias melhores sempre)</figcaption>
+          <figcaption><strong>• Eu amo seu modo de agir</strong> (Amo como você é toda carinhosa com todos os animais, um amor de pessoa)</figcaption>
+          <figcaption><strong>• Eu amo seu beijo</strong> (No nosso primeiro beijo eu estava todo tímido, na mesma hora que eu queria te beijar, eu estava pensando "será que tá tudo bem eu beijar ela já?" Kkkkk)</figcaption>
         </figure>
       </div>
 
-      <!-- Outros slides seguem o mesmo formato -->
+      <!-- Slide 2 -->
+      <div class="slide">
+        <figure class="image-item">
+          <img src="https://github.com/user-attachments/assets/9d8ffaf7-7cf4-4220-8344-5a2d5a09e41c" alt="Motivos para te amar">
+          <span class="heart" onclick="revealDescription(this)">❤️</span>
+          <figcaption><strong>• Eu amo seus olhos</strong> (principalmente quando a gente está bem perto e você fica olhando de volta pra mim)</figcaption>
+          <figcaption><strong>• Eu amo seu cabelo</strong> (principalmente quando você está deitada no meu colo e eu posso fazer carinho em você, enquanto você descansa)</figcaption>
+          <figcaption><strong>• Eu amo sua boca</strong> (principalmente quando ela está bem perto da minha, que a gente se beija e fica olhando um pro outro)</figcaption>
+        </figure>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide">
+        <figure class="image-item">
+          <img src="https://github.com/user-attachments/assets/b8d7f5e7-a9b7-4722-9d8e-5121746ed204" alt="Motivos para te amar">
+          <span class="heart" onclick="revealDescription(this)">❤️</span>
+          <figcaption><strong>• Eu amo seu carinho</strong> (a forma que você é toda carinhosa comigo, me faz ficar todo bobo)</figcaption>
+          <figcaption><strong>• Eu amo seu amor</strong> (você sempre tenta me mostrar de todas as formas possíveis como me ama, e eu amo isso)</figcaption>
+          <figcaption><strong>• Eu amo seu sorriso</strong> (você fica tão linda sorrindo, meu amor, deveria sorrir mais vezes)</figcaption>
+        </figure>
+      </div>
+
+      <!-- Resto dos slides... -->
 
     </div>
 
-    <!-- Setas de navegação -->
+    <!-- Setas de navegação (abaixo do slider) -->
     <div class="nav-arrows">
       <span onclick="prevSlide()">&#10094; Anterior</span>
       <span onclick="nextSlide()">Próximo &#10095;</span>
@@ -231,20 +240,30 @@
   </div>
 
   <script>
+    // Função para revelar a descrição
+    function revealDescription(heart) {
+      var descriptions = heart.parentElement.getElementsByTagName('figcaption');
+      for (var i = 0; i < descriptions.length; i++) {
+        descriptions[i].classList.toggle('reveal');
+      }
+    }
+    
+    // Lógica do Login
     const loginCorreto = "minhagostosa";
     const senhaCorreta = "17/07";
-
     document.getElementById("login-button").addEventListener("click", function() {
       const loginInput = document.getElementById("login-input").value;
       const passwordInput = document.getElementById("password-input").value;
       if (loginInput === loginCorreto && passwordInput === senhaCorreta) {
         document.getElementById("login-container").style.display = "none";
         document.getElementById("content").style.display = "block";
+        showSlide(slideIndex);
       } else {
         document.getElementById("error-message").style.display = "block";
       }
     });
-
+    
+    // Lógica do Slider
     var slideIndex = 0;
     function showSlide(n) {
       var slides = document.getElementsByClassName("slide");
@@ -255,20 +274,13 @@
       }
       slides[slideIndex].style.display = "block";
     }
-
+    
     function nextSlide() {
-      slideIndex++;
-      showSlide(slideIndex);
+      showSlide(slideIndex += 1);
     }
-
+    
     function prevSlide() {
-      slideIndex--;
-      showSlide(slideIndex);
-    }
-
-    function toggleDescription(index) {
-      const descriptions = document.getElementsByClassName("description");
-      descriptions[index].style.display = descriptions[index].style.display === "none" ? "block" : "none";
+      showSlide(slideIndex -= 1);
     }
   </script>
 </body>
