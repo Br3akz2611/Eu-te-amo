@@ -21,60 +21,65 @@
     }
     
     /* Overlay de Login */
-    #login-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.8);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
-      border-radius: 20px;
-    }
+#login-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+  border-radius: 20px;
+}
 
-    /* Estilo dos inputs */
-    #login-container input {
-      padding: 15px;
-      font-size: 1.2rem;
-      margin: 15px;
-      width: 280px;
-      border: 2px solid #d6336c;
-      border-radius: 8px;
-      background-color: #fff;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-    }
+/* Estilo dos inputs */
+#login-container input {
+  padding: 15px;
+  font-size: 1.2rem;
+  margin: 15px;
+  width: 280px;
+  border: 2px solid #d6336c;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
 
-    #login-container input:focus {
-      border-color: #ff99cc;
-      box-shadow: 0 0 10px rgba(255, 153, 204, 0.6);
-      outline: none;
-    }
+#login-container input:focus {
+  border-color: #ff99cc;
+  box-shadow: 0 0 10px rgba(255, 153, 204, 0.6);
+  outline: none;
+}
 
-    /* Estilo do botão */
-    #login-container button {
-      padding: 12px 25px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      background-color: #d6336c;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      transition: 0.3s;
+/* Estilo do botão */
+#login-container button {
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: #d6336c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+#login-container button:hover {
+  background-color: #ff66b2;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+    #error-message {
+      color: red;
       margin-top: 10px;
+      display: none;
     }
-
-    #login-container button:hover {
-      background-color: #ff66b2;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-    }
-
+    
     /* Slider Container */
     #slider {
       max-width: 800px;
@@ -104,7 +109,7 @@
       background: rgba(0,0,0,0.8);
       color: white;
     }
-
+    
     /* Estilos dos slides (imagens e legendas) */
     .image-item {
       background: rgba(255, 182, 193, 0.2);
@@ -133,7 +138,6 @@
       border-radius: 10px;
       margin-top: 10px;
     }
-    
     /* Destaque para a última legenda (imagem 'beijo') */
     .last-slide figcaption {
       font-size: 1.2rem;
@@ -143,7 +147,7 @@
       border-radius: 10px;
       box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
     }
-
+    
     /* Header que aparece apenas no primeiro slide */
     .header-slide {
       margin-bottom: 20px;
@@ -158,24 +162,6 @@
     .header-slide p {
       font-size: 1.2rem;
       color: #8b0000;
-    }
-
-    .typing {
-      display: inline-block;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: .15em solid orange;
-      width: 0;
-      animation: typing 4s steps(40) 1s 1 normal both;
-    }
-
-    @keyframes typing {
-      0% {
-        width: 0;
-      }
-      100% {
-        width: 100%;
-      }
     }
   </style>
 </head>
@@ -201,15 +187,110 @@
           <p>Vi no TikTok algumas trends de 200 motivos para te amar, mas era tudo uma cópia da outra. Quis fazer minha versão mesmo.</p>
         </div>
         <figure class="image-item">
-          <figcaption class="typing"><strong>São tantos motivos para eu te amar</strong></figcaption>
+          <figcaption><strong>São tantos motivos para eu te amar</strong></figcaption>
           <img src="https://github.com/user-attachments/assets/486f2015-767b-4ffc-859c-2544113802e3 " alt="São tantos motivos para eu te amar">
-          <figcaption class="typing"><strong>• Eu amo sua companhia</strong> (Ter você ao meu lado deixa meus dias melhores sempre)</figcaption>
-          <figcaption class="typing"><strong>• Eu amo seu modo de agir</strong> (Amo como você é toda carinhosa com todos os animais, um amor de pessoa)</figcaption>
-          <figcaption class="typing"><strong>• Eu amo seu beijo</strong> (No nosso primeiro beijo eu estava todo tímido, na mesma hora que eu queria te beijar, eu estava pensando "será que tá tudo bem eu beijar ela já?" Kkkkk)</figcaption>
+          <figcaption><strong>• Eu amo sua companhia</strong> (Ter você ao meu lado deixa meus dias melhores sempre)</figcaption>
+          <figcaption><strong>• Eu amo seu modo de agir</strong> (Amo como você é toda carinhosa com todos os animais, um amor de pessoa)</figcaption>
+          <figcaption><strong>• Eu amo seu beijo</strong> (No nosso primeiro beijo eu estava todo tímido, na mesma hora que eu queria te beijar, eu estava pensando "será que tá tudo bem eu beijar ela já?" Kkkkk)</figcaption>
         </figure>
       </div>
-      <!-- Demais slides -->
-      <!-- Repita para os outros slides, incluindo a classe 'typing' nas legendas -->
+      
+      <!-- Slide 2 -->
+      <div class="slide">
+        <figure class="image-item">
+          <img src="https://github.com/user-attachments/assets/9d8ffaf7-7cf4-4220-8344-5a2d5a09e41c" alt="Motivos para te amar">
+          <figcaption><strong>• Eu amo seus olhos</strong> (principalmente quando a gente está bem perto e você fica olhando de volta pra mim)</figcaption>
+          <figcaption><strong>• Eu amo seu cabelo</strong> (principalmente quando você está deitada no meu colo e eu posso fazer carinho em você, enquanto você descansa)</figcaption>
+          <figcaption><strong>• Eu amo sua boca</strong> (principalmente quando ela está bem perto da minha, que a gente se beija e fica olhando um pro outro)</figcaption>
+        </figure>
+      </div>
+      
+      <!-- Slide 3 -->
+      <div class="slide">
+        <figure class="image-item">
+          <img src="https://github.com/user-attachments/assets/b8d7f5e7-a9b7-4722-9d8e-5121746ed204" alt="Motivos para te amar">
+          <figcaption><strong>• Eu amo seu carinho</strong> (a forma que você é toda carinhosa comigo, me faz ficar todo bobo)</figcaption>
+          <figcaption><strong>• Eu amo seu amor</strong> (você sempre tenta me mostrar de todas as formas possíveis como me ama, e eu amo isso)</figcaption>
+          <figcaption><strong>• Eu amo seu sorriso</strong> (você fica tão linda sorrindo, meu amor, deveria sorrir mais vezes)</figcaption>
+        </figure>
+      </div>
+      
+      <!-- Slide 4 -->
+      <div class="slide">
+        <figure class="image-item">
+          <img src="https://github.com/user-attachments/assets/3eee27b0-36ce-4a12-978f-32af0ef228e6" alt="Motivos para te amar">
+          <figcaption><strong>• Eu amo sua risada</strong> (mesmo que você rindo seja quase uma bicicleta freiando, amo te ver rindo porque sei que está feliz na hora)</figcaption>
+          <figcaption><strong>• Eu amo seu cheiro</strong> (você é tão cheirosa, vida, eu amo quando estamos juntinhos e eu posso sentir seu cheiro)</figcaption>
+          <figcaption><strong>• Eu amo seu corpo</strong> (você é totalmente perfeita, minha vida, você me fala que queria mudar seu corpo, mas eu não mudaria nada em você)</figcaption>
+        </figure>
+      </div>
+      
+      <!-- Slide 5 -->
+      <div class="slide">
+        <figure class="image-item">
+          <img src="https://github.com/user-attachments/assets/294a491b-36fc-4aa5-b0e7-126d9129a4e7" alt="Motivos para te amar">
+          <figcaption><strong>• Eu amo seu abraço</strong> (Nosso primeiro abraço, eu estava nervoso porque finalmente depois de tanto tempo a gente se viu, e na hora que te vi abrindo a porta, você estava tão linda, meu amor. Acho que meu corpo congelou por um instante e então a gente se abraçou)</figcaption>
+          <figcaption><strong>• Eu amo nossos passeios</strong> (Cada dia no shopping foi incrível, a hora que a gente comeu o gelato de pistache em pé e você ficou no cantinho pedindo pra eu ficar na sua frente pra não olharem para você, sua reação quando te dei a My Melody, quando te dei as alianças, amei ver como ficou emocionada, eu quero reviver momentos como aqueles diversas vezes com você)</figcaption>
+        </figure>
+      </div>
+      
+      <!-- Slide 6 -->
+      <div class="slide">
+        <figure class="image-item">
+          <img src="https://github.com/user-attachments/assets/8e17270a-2350-4674-b96b-f1dacddeae0c" alt="Motivos para te amar">
+          <figcaption><strong>• Eu amo sua beleza</strong> (Todos os dias quando te via, eu ficava apreciando, como namoro uma mulher tão linda, tanto quando estávamos só na sua casa, quanto quando saíamos juntos, e sempre eu já pensava, ela é o amor da minha vida)</figcaption>
+          <figcaption><strong>• Eu amo sua amizade</strong> (Eu amo como tudo a gente faz junto ali, porque a gente não só é namorado, a gente ao mesmo tempo que se trata como namorados, somos muito amigos também)</figcaption>
+        </figure>
+      </div>
+      
+      <!-- Slide 7 -->
+      <div class="slide">
+        <figure class="image-item">
+          <img src="https://github.com/user-attachments/assets/1b21736e-25ae-47d1-bb71-5bfa5df97f11" alt="Motivos para te amar">
+          <figcaption><strong>• Eu amo suas fotos</strong> (Esse você sabe já, tenho guardadinha cada foto que já me mandou, eu amo te ver)</figcaption>
+          <figcaption><strong>• Eu amo seu cuidado</strong> (Você é toda cuidadosa comigo, sempre faz de tudo pra me ver bem)</figcaption>
+          <figcaption><strong>• Eu amo sua safadeza</strong> (Não podia faltar kk)</figcaption>
+        </figure>
+      </div>
+      
+      <!-- Slide 8 -->
+      <div class="slide">
+        <figure class="image-item">
+          <img src="https://github.com/user-attachments/assets/3ab1ff47-9171-4d1b-b36a-8b157be9703f" alt="Motivos para te amar">
+          <figcaption><strong>• Eu amo sua paciência</strong> ( Você é estressadinha quanto algumas brincadeiras minhas kkk, mas da pra entender, mas a paciência que eu falo aqui, é quando eu estou pra baixo por motivos de insegurança besta ou algo do tipo, e mesmo assim você me trata com calma)</figcaption>
+          <figcaption><strong>• Eu amo seus elogios</strong> ( Eu fico todo tímido toda vez que me elogia)</figcaption>
+          <figcaption><strong>• Eu amo sua timidez</strong> ( Da mesma forma que eu fico tímido, você fica também e eu acho tão fofinha)</figcaption>
+        </figure>
+      </div>
+      
+      <!-- Slide 9 -->
+      <div class="slide">
+        <figure class="image-item">
+          <img src="https://github.com/user-attachments/assets/cd843f54-568c-4fc2-8ef8-2f2d25980ac9" alt="Motivos para te amar">
+          <figcaption><strong>• Eu amo como você é fofa</strong></figcaption>
+          <figcaption><strong>• Eu amo seu humor</strong> ( Nosso humor da tão bem junto , porque podemos brincar de tudo)</figcaption>
+          <figcaption><strong>• Eu amo sua confiança</strong> ( Você sem dúvida é a pessoa que mais sabe de mim, eu confiei em você pra tantas coisas já, e eu me sinto tão honrado por você confiar em mim tambem)</figcaption>
+          <figcaption><strong>• Eu amo sua dicção</strong> ( Tinha que colocar amor kkkk, seu jeito de falar é único, e amo ele)</figcaption>
+          <figcaption><strong>• Eu amo sua inteligência</strong></figcaption>
+          <figcaption><strong>• Eu amo como você é esforçada</strong></figcaption>
+          <figcaption><strong>• Eu amo sua visão de futuro</strong></figcaption>
+          <figcaption><strong>• Eu amo a gente</strong></figcaption>
+        </figure>
+      </div>
+      
+      <!-- Slide 10 (beijo) -->
+      <div class="slide">
+        <figure class="image-item last-slide">
+          <img src="https://github.com/user-attachments/assets/49878423-0a45-40ed-ac2b-31c2f2fecae6" alt="Nosso amor eterno">
+          <figcaption>
+            <strong>
+              Eu quero você, e somente você pra sempre.<br>
+              Você sempre vai ser meu amorzinho, minha gatinha, minha gostosa, meu docinho, minha mulher, amor da minha vida, meu tudo, minha amada, meu coração, por enquanto minha namorada porém será minha esposa, mãe dos meus filhos, minha alma gêmea, minha princesa, minha Deusa, meu sempre.<br>
+              Eu te amo muito meu amor ❤️
+            </strong>
+          </figcaption>
+        </figure>
+      </div>
     </div>
     
     <!-- Setas de navegação (abaixo do slider) -->
@@ -245,13 +326,7 @@
         slides[i].style.display = "none";
       }
       slides[slideIndex].style.display = "block";
-      // Aciona a digitação para as legendas
-      const captions = slides[slideIndex].getElementsByClassName('typing');
-      for (let caption of captions) {
-        caption.style.animation = 'typing 4s steps(40) 1s normal both';
-      }
     }
-
     function nextSlide() {
       slideIndex++;
       showSlide(slideIndex);
