@@ -1,155 +1,81 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eu te amo</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Importação de fontes */
-    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
-    
-    /* Estilos gerais */
-    body {
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-      background-color: #ffe6e6;
-      background-image: url('https://github.com/user-attachments/assets/f8544bb1-4984-48aa-bab1-c5cf73c7b69f');
-      background-size: cover;
-      margin: 0;
-      padding: 0;
-    }
-    
-    /* Slider Container */
-    #slider {
-      max-width: 800px;
-      margin: 20px auto;
-      position: relative;
-    }
-    .slide {
-      display: none;
-    }
-    
-    .image-item {
-      background: rgba(255, 182, 193, 0.2);
-      padding: 15px;
-      border-radius: 15px;
-      box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
-      margin: 0 auto;
-      width: 320px;
-      text-align: center;
-    }
+/* Importando uma fonte romântica */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
 
-    .image-item img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease-in-out;
-    }
-    .image-item img:hover {
-      transform: scale(1.05);
-    }
+body {
+    background-color: #ffe6e6; /* Fundo rosado */
+    background-image: url('imagens/coracoes.png'); /* Imagem de fundo com corações suaves */
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: #8b0000;
+}
 
-    .image-item figcaption {
-      font-size: 1rem;
-      color: #b30000;
-      font-weight: bold;
-      background: rgba(255,182,193,0.4);
-      padding: 8px;
-      border-radius: 10px;
-      margin-top: 10px;
-      cursor: pointer; /* Adicionado para indicar interatividade */
-      transition: 0.3s ease;
-    }
-    .image-item figcaption:hover {
-      background-color: rgba(255, 99, 103, 0.4);
-    }
+/* Título principal */
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #d6336c;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
 
-    .description {
-      display: none; /* Descrições começam ocultas */
-      font-size: 0.9rem;
-      color: #333;
-      padding: 5px;
-    }
+/* Parágrafos */
+p {
+    font-size: 1.2rem;
+    color: #7a1c1c;
+    margin-bottom: 15px;
+}
 
-  </style>
-</head>
-<body>
-  <!-- Conteúdo -->
-  <div id="slider">
-    <!-- Slide 1 -->
-    <div class="slide">
-      <figure class="image-item">
-        <img src="https://github.com/user-attachments/assets/486f2015-767b-4ffc-859c-2544113802e3" alt="São tantos motivos para eu te amar">
-        <figcaption onclick="toggleDescription(this)">
-          <strong>São tantos motivos para eu te amar</strong>
-        </figcaption>
-        <div class="description">
-          <strong>• Eu amo sua companhia</strong> (Ter você ao meu lado deixa meus dias melhores sempre)
-        </div>
-        <div class="description">
-          <strong>• Eu amo seu modo de agir</strong> (Amo como você é toda carinhosa com todos os animais, um amor de pessoa)
-        </div>
-        <div class="description">
-          <strong>• Eu amo seu beijo</strong> (No nosso primeiro beijo eu estava todo tímido, na mesma hora que eu queria te beijar, eu estava pensando "será que tá tudo bem eu beijar ela já?" Kkkkk)
-        </div>
-      </figure>
-    </div>
-    
-    <!-- Slide 2 -->
-    <div class="slide">
-      <figure class="image-item">
-        <img src="https://github.com/user-attachments/assets/9d8ffaf7-7cf4-4220-8344-5a2d5a09e41c" alt="Motivos para te amar">
-        <figcaption onclick="toggleDescription(this)">
-          <strong>Motivos para te amar</strong>
-        </figcaption>
-        <div class="description">
-          <strong>• Eu amo seus olhos</strong> (principalmente quando a gente está bem perto e você fica olhando de volta pra mim)
-        </div>
-        <div class="description">
-          <strong>• Eu amo seu cabelo</strong> (principalmente quando você está deitada no meu colo e eu posso fazer carinho em você, enquanto você descansa)
-        </div>
-        <div class="description">
-          <strong>• Eu amo sua boca</strong> (principalmente quando ela está bem perto da minha, que a gente se beija e fica olhando um pro outro)
-        </div>
-      </figure>
-    </div>
+/* Seção das imagens */
+.images-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
 
-    <!-- Outros slides seguem o mesmo padrão -->
-    
-  </div>
+/* Caixas das imagens */
+.image-item {
+    background: rgba(255, 182, 193, 0.2); /* Fundo rosado leve */
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
 
-  <script>
-    // Função para alternar a exibição da descrição ao clicar
-    function toggleDescription(captionElement) {
-      // Seleciona a próxima div .description dentro do mesmo <figure>
-      var descriptions = captionElement.parentElement.getElementsByClassName("description");
-      
-      for (var i = 0; i < descriptions.length; i++) {
-        // Alterna a visibilidade de cada descrição
-        descriptions[i].style.display = descriptions[i].style.display === "none" ? "block" : "none";
-      }
-    }
+/* Estilização das imagens */
+.image-item img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+}
 
-    // Lógica do Slider
-    var slideIndex = 0;
-    function showSlide(n) {
-      var slides = document.getElementsByClassName("slide");
-      if (n >= slides.length) { slideIndex = 0; }
-      if (n < 0) { slideIndex = slides.length - 1; }
-      for (var i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slides[slideIndex].style.display = "block";
-    }
-    function nextSlide() {
-      slideIndex++;
-      showSlide(slideIndex);
-    }
-    function prevSlide() {
-      slideIndex--;
-      showSlide(slideIndex);
-    }
-  </script>
-</body>
-</html>
+/* Efeito ao passar o mouse na imagem */
+.image-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilização das legendas */
+.image-item figcaption {
+    font-size: 1rem;
+    color: #b30000;
+    font-weight: bold;
+    background: rgba(255, 182, 193, 0.4); /* Fundo rosado leve */
+    padding: 8px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Última legenda (declaração final) */
+.image-item:last-child figcaption {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background: #d6336c;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
