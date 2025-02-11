@@ -1,5 +1,4 @@
-/* Importando fontes */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
 
 /* Estilos gerais */
 body {
@@ -24,12 +23,6 @@ body {
   border-radius: 15px;
 }
 
-/* Slide */
-.slide {
-  display: none;
-  position: relative;
-}
-
 /* Estilos dos slides */
 .image-item {
   background: rgba(255, 182, 193, 0.3);
@@ -52,7 +45,9 @@ body {
   transform: scale(1.05);
 }
 
+/* Centralizar as legendas (figcaption) */
 .image-item figcaption {
+  text-align: center;
   font-size: 1.1rem;
   color: #d6336c;
   font-weight: bold;
@@ -71,6 +66,7 @@ body {
   padding: 15px;
   border-radius: 10px;
   box-shadow: 2px 2px 12px rgba(0,0,0,0.3);
+  text-align: center;
 }
 
 /* Header do Slider */
@@ -131,6 +127,31 @@ body {
   border-radius: 20px;
 }
 
+#login-container p {
+  font-size: 1.5rem;
+  color: #d6336c;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Estilos dos campos de login */
+#login-container input {
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  margin: 10px;
+  width: 250px;
+  border: 2px solid #d6336c;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#login-container input:focus {
+  border-color: #ff66b2;
+  outline: none;
+}
+
 /* Estilos do botão de login */
 #login-container button {
   padding: 12px 25px;
@@ -150,8 +171,29 @@ body {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
 }
 
+/* Estilos da mensagem de erro */
 #error-message {
   color: red;
   margin-top: 10px;
   display: none;
+}
+
+/* Estilos de login - caixa encantada */
+#login-container p {
+  font-size: 1.2rem;
+  color: #d6336c;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* Outros ajustes de estilo para manter a experiência visual agradável */
+input[type="text"],
+input[type="password"] {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Ajuste geral */
+* {
+  box-sizing: border-box;
 }
