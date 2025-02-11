@@ -1,195 +1,157 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eu te amo</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Importação de fontes */
-    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
-    
-    /* Estilos gerais */
-    body {
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-      background-color: #ffe6e6;
-      background-image: url('https://github.com/user-attachments/assets/f8544bb1-4984-48aa-bab1-c5cf73c7b69f');
-      background-size: cover;
-      margin: 0;
-      padding: 0;
-    }
-    
-    /* Slider Container */
-    #slider {
-      max-width: 800px;
-      margin: 20px auto;
-      position: relative;
-    }
-    .slide {
-      display: none;
-    }
-    
-    /* Estilo para as setas de navegação abaixo do slider */
-    .nav-arrows {
-      margin-top: 20px;
-    }
-    .nav-arrows span {
-      cursor: pointer;
-      font-size: 24px;
-      font-weight: bold;
-      color: #888;
-      background: rgba(255,255,255,0.7);
-      padding: 10px 20px;
-      margin: 0 10px;
-      border-radius: 5px;
-      transition: 0.3s;
-    }
-    .nav-arrows span:hover {
-      background: rgba(0,0,0,0.8);
-      color: white;
-    }
-    
-    /* Estilos dos slides (imagens e legendas) */
-    .image-item {
-      background: rgba(255, 182, 193, 0.4);
-      padding: 15px;
-      border-radius: 15px;
-      box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
-      margin: 0 auto;
-      width: 320px;
-      text-align: center;
-    }
-    .image-item img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease-in-out;
-    }
-    .image-item img:hover {
-      transform: scale(1.05);
-    }
-    .image-item figcaption {
-      font-size: 1rem;
-      color: #d6336c;
-      font-weight: bold;
-      background: rgba(255, 182, 193, 0.6);
-      padding: 8px;
-      border-radius: 10px;
-      margin-top: 10px;
-    }
+/* Importando fontes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Dancing+Script:wght@600&display=swap');
 
-    /* Slide 10 (Beijo e Declaração Final) */
-    .last-slide {
-      background: rgba(0,0,0,0.5);
-      padding: 30px;
-      border-radius: 20px;
-    }
-    .last-slide figcaption {
-      font-size: 1.5rem;
-      color: #fff;
-      background: #d6336c;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-      font-weight: bold;
-      text-align: center;
-      line-height: 1.6;
-    }
-    
-    /* Header Slide */
-    .header-slide {
-      margin-bottom: 20px;
-    }
-    .header-slide h1 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 3rem;
-      color: #d6336c;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-      margin-bottom: 10px;
-    }
-    .header-slide p {
-      font-size: 1.2rem;
-      color: #8b0000;
-    }
-  </style>
-</head>
-<body>
-  <div id="login-container">
-    <p>Digite o apelido que eu mais te chamo (login) e a nossa data de namoro (senha) para acessar:</p>
-    <input type="text" id="login-input" placeholder="Login">
-    <input type="password" id="password-input" placeholder="Senha">
-    <button id="login-button">Entrar</button>
-    <p id="error-message">Login ou senha incorretos.</p>
-  </div>
-  
-  <!-- Conteúdo protegido -->
-  <div id="content" style="display: none;">
-    <!-- Slider -->
-    <div id="slider">
-      <!-- Slide 1 -->
-      <div class="slide">
-        <div class="header-slide">
-          <h1>Para o Amor da Minha Vida</h1>
-          <p>Amor, já vai fazer 8 meses que estamos namorando, e desde o início eu nunca deixei de te amar nem por 1 milésimo. Eu te amo muito, minha vida, amo cada momento que passamos juntos.</p>
-        </div>
-        <figure class="image-item">
-          <figcaption><strong>São tantos motivos para eu te amar</strong></figcaption>
-          <img src="https://github.com/user-attachments/assets/486f2015-767b-4ffc-859c-2544113802e3" alt="Motivos para eu te amar">
-          <figcaption><strong>• Eu amo sua companhia</strong> (Ter você ao meu lado deixa meus dias melhores sempre)</figcaption>
-        </figure>
-      </div>
-      
-      <!-- Slide 2 -->
-      <div class="slide">
-        <figure class="image-item">
-          <img src="https://github.com/user-attachments/assets/9d8ffaf7-7cf4-4220-8344-5a2d5a09e41c" alt="Motivos para te amar">
-          <figcaption><strong>• Eu amo seus olhos</strong> (principalmente quando a gente está bem perto e você fica olhando de volta pra mim)</figcaption>
-        </figure>
-      </div>
+/* Estilos gerais */
+body {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background-color: #ffe6e6;
+  background-image: url('https://github.com/user-attachments/assets/f8544bb1-4984-48aa-bab1-c5cf73c7b69f');
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
 
-      <!-- Slide 10 (Destaque Final) -->
-      <div class="slide">
-        <figure class="image-item last-slide">
-          <img src="https://github.com/user-attachments/assets/49878423-0a45-40ed-ac2b-31c2f2fecae6" alt="Nosso amor eterno">
-          <figcaption>
-            <strong>
-              Eu quero você, e somente você pra sempre.<br>
-              Você sempre vai ser meu amorzinho, minha gatinha, minha gostosa, meu docinho, minha mulher, amor da minha vida, meu tudo, minha amada, meu coração, por enquanto minha namorada porém será minha esposa, mãe dos meus filhos, minha alma gêmea, minha princesa, minha Deusa, meu sempre.<br>
-              Eu te amo muito meu amor ❤️
-            </strong>
-          </figcaption>
-        </figure>
-      </div>
-    </div>
+/* Slider Container */
+#slider {
+  max-width: 800px;
+  margin: 20px auto;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+}
 
-    <!-- Setas de navegação -->
-    <div class="nav-arrows">
-      <span onclick="prevSlide()">&#10094; Anterior</span>
-      <span onclick="nextSlide()">Próximo &#10095;</span>
-    </div>
-  </div>
-  
-  <script>
-    // Lógica do Slider
-    var slideIndex = 0;
-    function showSlide(n) {
-      var slides = document.getElementsByClassName("slide");
-      if (n >= slides.length) { slideIndex = 0; }
-      if (n < 0) { slideIndex = slides.length - 1; }
-      for (var i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slides[slideIndex].style.display = "block";
-    }
-    function nextSlide() {
-      slideIndex++;
-      showSlide(slideIndex);
-    }
-    function prevSlide() {
-      slideIndex--;
-      showSlide(slideIndex);
-    }
-  </script>
-</body>
-</html>
+/* Slide */
+.slide {
+  display: none;
+  position: relative;
+}
+
+/* Estilos dos slides */
+.image-item {
+  background: rgba(255, 182, 193, 0.3);
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+  width: 100%;
+  text-align: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.image-item img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-item img:hover {
+  transform: scale(1.05);
+}
+
+.image-item figcaption {
+  font-size: 1.1rem;
+  color: #d6336c;
+  font-weight: bold;
+  background: rgba(255,182,193,0.5);
+  padding: 10px;
+  border-radius: 12px;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Destaque para a última legenda */
+.last-slide figcaption {
+  font-size: 1.3rem;
+  color: #fff;
+  background: #d6336c;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 12px rgba(0,0,0,0.3);
+}
+
+/* Header do Slider */
+.header-slide {
+  margin-bottom: 20px;
+}
+
+.header-slide h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3.5rem;
+  color: #d6336c;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  margin-bottom: 15px;
+}
+
+.header-slide p {
+  font-size: 1.3rem;
+  color: #8b0000;
+  font-weight: 400;
+}
+
+/* Setas de navegação */
+.nav-arrows {
+  margin-top: 20px;
+}
+
+.nav-arrows span {
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  color: #888;
+  background: rgba(255,255,255,0.7);
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.nav-arrows span:hover {
+  background: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* Overlay de Login */
+#login-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+}
+
+/* Estilos do botão de login */
+#login-container button {
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: #d6336c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+#login-container button:hover {
+  background-color: #ff66b2;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+#error-message {
+  color: red;
+  margin-top: 10px;
+  display: none;
+}
