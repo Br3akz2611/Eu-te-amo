@@ -188,4 +188,14 @@ body {
   margin-bottom: 20px;
 }
 
-/* Outros ajustes de estilo para manter a experiência visual agradá
+/* Outros ajustes de estilo para manter a experiência visual agradável */
+input[type="text"],
+input[type="password"] {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Ajuste geral */
+* {
+  box-sizing: border-box;
+}
