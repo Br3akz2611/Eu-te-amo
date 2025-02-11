@@ -32,6 +32,8 @@ body {
   width: 100%;
   text-align: center;
   transition: transform 0.5s ease-in-out;
+  margin: 0 auto; /* Centraliza o fundo branco */
+  max-width: 600px; /* Limita a largura */
 }
 
 .image-item img {
@@ -186,14 +188,4 @@ body {
   margin-bottom: 20px;
 }
 
-/* Outros ajustes de estilo para manter a experiência visual agradável */
-input[type="text"],
-input[type="password"] {
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Ajuste geral */
-* {
-  box-sizing: border-box;
-}
+/* Outros ajustes de estilo para manter a experiência visual agradá
