@@ -189,7 +189,7 @@
   <!-- Overlay de Login -->
   <div id="login-container">
     <img src="https://github.com/user-attachments/assets/67ad0f71-aa8a-438c-a917-584055765207" alt="Coração" class="heart-image">
-    <p>Digite o apelido que eu mais te chamo (tudo junto) (login) e a nossa data de namoro (dia/mes) (senha) para acessar:</p>
+    <p>Digite o apelido que eu mais te chamo (login) e a nossa data de namoro (dia/mes) (senha) para acessar:</p>
     <input type="text" id="login-input" placeholder="Login">
     <input type="password" id="password-input" placeholder="Senha">
     <button id="login-button">Entrar</button>
@@ -313,11 +313,12 @@
     <!-- Setas de navegação -->
     <div class="nav-arrows">
       <span onclick="prevSlide()">&#10094; Anterior</span>
+      <span onclick="nextSlide()">Próximo &#10095;</span>
     </div>
   </div>
 
   <script>
-  const loginCorreto = "minhagostosa";
+  const loginCorreto = "minha gostosa";
   const senhaCorreta = "17/07";
   document.getElementById("login-button").addEventListener("click", function() {
     const loginInput = document.getElementById("login-input").value;
