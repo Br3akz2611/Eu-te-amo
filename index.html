@@ -333,31 +333,33 @@
 
   let currentSlide = 0;
 
-  function showSlide(index) {
-    const slides = document.querySelectorAll(".slide");
-    const nextButton = document.querySelector(".nav-arrows .next");
-    const prevButton = document.querySelector(".nav-arrows .previous");
+function showSlide(index) {
+  const slides = document.querySelectorAll(".slide");
+  const nextButton = document.querySelector(".nav-arrows .next");
+  const prevButton = document.querySelector(".nav-arrows .previous");
 
-    if (index >= slides.length) {
-      currentSlide = 0;
-    } else if (index < 0) {
-      currentSlide = slides.length - 1;
-    }
-    
-    slides.forEach((slide, i) => {
-      slide.style.display = i === currentSlide ? "block" : "none";
-    });
-
-    // Lógica para esconder a seta "Próximo" no último slide
-    if (currentSlide === slides.length - 1) {
-      nextButton.style.display = "none"; // Esconde o botão "Próximo"
-    } else {
-      nextButton.style.display = "inline-block"; // Exibe o botão "Próximo"
-    }
-
-    // Sempre exibe a seta "Anterior"
-    prevButton.style.display = "inline-block"; 
+  // Previne que o índice ultrapasse o número de slides
+  if (index >= slides.length) {
+    currentSlide = slides.length - 1; // Fixa no último slide
+  } else if (index < 0) {
+    currentSlide = 0; // Fixa no primeiro slide
   }
+
+  slides.forEach((slide, i) => {
+    slide.style.display = i === currentSlide ? "block" : "none";
+  });
+
+  // Lógica para esconder a seta "Próximo" no último slide
+  if (currentSlide === slides.length - 1) {
+    nextButton.style.display = "none"; // Esconde o botão "Próximo"
+  } else {
+    nextButton.style.display = "inline-block"; // Exibe o botão "Próximo"
+  }
+
+  // Sempre exibe a seta "Anterior"
+  prevButton.style.display = "inline-block"; 
+}
+
 
   function nextSlide() {
     currentSlide++;
