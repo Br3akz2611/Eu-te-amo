@@ -17,7 +17,6 @@
       background-size: cover;
       margin: 0;
       padding: 0;
-      overflow: hidden;
     }
     
     /* Slider Container */
@@ -30,23 +29,11 @@
       padding: 20px;
       background: rgba(255, 255, 255, 0.8);
       border-radius: 15px;
-      animation: fadeIn 1s ease-in;
-    }
-
-    /* Animação de Fade-In para o Slider */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
     }
     
     .slide {
       display: none;
       position: relative;
-      animation: fadeIn 1s ease-in-out;
     }
 
     /* Estilos dos slides */
@@ -58,18 +45,6 @@
       width: 100%;
       text-align: center;
       transition: transform 0.5s ease-in-out;
-      animation: slideUp 1.5s ease-out;
-    }
-
-    @keyframes slideUp {
-      from {
-        transform: translateY(50px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
     }
     
     .image-item img {
@@ -92,16 +67,6 @@
       border-radius: 12px;
       margin-top: 10px;
       font-style: italic;
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
     }
 
     /* Destaque para a última legenda */
@@ -112,22 +77,6 @@
       padding: 15px;
       border-radius: 10px;
       box-shadow: 2px 2px 12px rgba(0,0,0,0.3);
-      animation: pulse 1.5s ease-out infinite;
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      50% {
-        transform: scale(1.05);
-        opacity: 0.9;
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
     }
 
     /* Header do Slider */
@@ -141,16 +90,6 @@
       color: #d6336c;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
       margin-bottom: 15px;
-      animation: typewriter 2s steps(40) 1s 1 normal forwards;
-    }
-
-    @keyframes typewriter {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100%;
-      }
     }
 
     .header-slide p {
@@ -162,7 +101,6 @@
     /* Setas de navegação */
     .nav-arrows {
       margin-top: 20px;
-      animation: fadeIn 1s ease-in;
     }
 
     .nav-arrows span {
@@ -180,10 +118,10 @@
     .nav-arrows span:hover {
       background: rgba(0,0,0,0.8);
       color: white;
-      transform: scale(1.1);
     }
 
     /* Overlay de Login */
+    
     #login-container {
       position: fixed;
       top: 0;
@@ -249,7 +187,7 @@
         </div>
         <figure class="image-item">
           <figcaption><strong>São tantos motivos para eu te amar</strong></figcaption>
-          <img src="https://github.com/user-attachments/assets/486f2015-767b-4ffc-859c-2544113802e3" alt="São tantos motivos para eu te amar">
+          <img src="https://github.com/user-attachments/assets/486f2015-767b-4ffc-859c-2544113802e3 " alt="São tantos motivos para eu te amar">
           <figcaption><strong>• Eu amo sua companhia</strong> (Ter você ao meu lado deixa meus dias melhores sempre)</figcaption>
           <figcaption><strong>• Eu amo seu modo de agir</strong> (Amo como você é toda carinhosa com todos os animais, um amor de pessoa)</figcaption>
           <figcaption><strong>• Eu amo seu beijo</strong> (No nosso primeiro beijo eu estava todo tímido, na mesma hora que eu queria te beijar, eu estava pensando "será que tá tudo bem eu beijar ela já?" Kkkkk)</figcaption>
@@ -265,7 +203,7 @@
         </figure>
       </div>
       <!-- ... continue com os outros slides ... -->
-       <!-- Slide 3 -->
+      <!-- Slide 3 -->
       <div class="slide">
         <figure class="image-item">
           <img src="https://github.com/user-attachments/assets/b8d7f5e7-a9b7-4722-9d8e-5121746ed204" alt="Motivos para te amar">
@@ -337,6 +275,7 @@
           <figcaption><strong>• Eu amo a gente</strong></figcaption>
         </figure>
       </div>
+
       <!-- Slide 10 (beijo) -->
       <div class="slide">
         <figure class="image-item last-slide">
@@ -351,50 +290,52 @@
         </figure>
       </div>
     </div>
-    <!-- Controles de navegação -->
+    <!-- Setas de navegação -->
     <div class="nav-arrows">
-      <span id="prev" onclick="moveSlide(-1)">❮</span>
-      <span id="next" onclick="moveSlide(1)">❯</span>
+      <span onclick="prevSlide()">&#10094; Anterior</span>
+      <span onclick="nextSlide()">Próximo &#10095;</span>
     </div>
   </div>
 
   <script>
-    // Funções para o slider
+    const loginCorreto = "minhagostosa";
+    const senhaCorreta = "17/07";
+    document.getElementById("login-button").addEventListener("click", function() {
+      const loginInput = document.getElementById("login-input").value;
+      const passwordInput = document.getElementById("password-input").value;
+      if (loginInput === loginCorreto && passwordInput === senhaCorreta) {
+        document.getElementById("login-container").style.display = "none";
+        document.getElementById("content").style.display = "block";
+      } else {
+        document.getElementById("error-message").style.display = "block";
+      }
+    });
+
     let currentSlide = 0;
-    let slides = document.querySelectorAll('.slide');
 
     function showSlide(index) {
+      const slides = document.querySelectorAll(".slide");
       if (index >= slides.length) {
         currentSlide = 0;
-      }
-      if (index < 0) {
+      } else if (index < 0) {
         currentSlide = slides.length - 1;
       }
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = 'none';
-      }
-      slides[currentSlide].style.display = 'block';
+      slides.forEach((slide, i) => {
+        slide.style.display = i === currentSlide ? "block" : "none";
+      });
     }
 
-    function moveSlide(step) {
-      currentSlide += step;
+    function nextSlide() {
+      currentSlide++;
       showSlide(currentSlide);
     }
 
-    // Login Validation
-    document.getElementById('login-button').addEventListener('click', function() {
-      let login = document.getElementById('login-input').value;
-      let password = document.getElementById('password-input').value;
+    function prevSlide() {
+      currentSlide--;
+      showSlide(currentSlide);
+    }
 
-      // Aqui você coloca sua lógica de verificação
-      if (login === 'minhagostosa' && password === '17/07') {
-        document.getElementById('login-container').style.display = 'none';
-        document.getElementById('content').style.display = 'block';
-        showSlide(currentSlide);
-      } else {
-        document.getElementById('error-message').style.display = 'block';
-      }
-    });
+    showSlide(currentSlide);
   </script>
 </body>
 </html>
