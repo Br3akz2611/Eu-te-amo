@@ -91,16 +91,8 @@ body {
 }
 
 /* Setas de navegação */
-
 .nav-arrows {
   margin-top: 20px;
-}
-
-@media (max-width: 600px) {
-  .nav-arrows span {
-    font-size: 20px; /* Reduz o tamanho da fonte */
-    padding: 8px 16px; /* Diminui o padding */
-  }
 }
 
 .nav-arrows span {
@@ -227,4 +219,13 @@ input[type="password"] {
 /* Ajuste geral */
 * {
   box-sizing: border-box;
+}
+
+/* Media Query para dispositivos móveis */
+@media screen and (max-width: 768px) {
+  .nav-arrows span {
+    font-size: 20px;  /* Diminui o tamanho das setas */
+    padding: 10px 18px;  /* Ajusta o espaçamento */
+    margin: 0 10px;  /* Diminui a margem */
+  }
 }
