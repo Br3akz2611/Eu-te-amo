@@ -119,49 +119,41 @@
     }
 
     /* Setas de navegação */
-   <div class="nav-arrows">
-  <span class="previous">&#10094;</span> <!-- Seta para a esquerda -->
-  <span class="next">&#10095;</span> <!-- Seta para a direita -->
-</div>
-    /* Setas de navegação */
-.nav-arrows {
-  margin-top: 20px;
-}
+    .nav-arrows {
+      margin-top: 20px;
+    }
 
-.nav-arrows span {
-  cursor: pointer;
-  font-family: 'Dancing Script', cursive;  /* Fonte romântica */
-  font-size: 24px;
-  font-weight: bold;
-  color: #d6336c;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 12px 24px;
-  margin: 0 15px;
-  border-radius: 50%;
-  transition: 0.3s ease-in-out;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-}
+    .nav-arrows span {
+      cursor: pointer;
+      font-family: 'Dancing Script', cursive;
+      font-size: 24px;
+      font-weight: bold;
+      color: #d6336c;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 12px 24px;
+      margin: 0 15px;
+      border-radius: 50%;
+      transition: 0.3s ease-in-out;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    }
 
-.nav-arrows span:hover {
-  background: #ff66b2;  /* Cor suave no hover */
-  color: white;
-  transform: scale(1.1);  /* Aumenta um pouco ao passar o mouse */
-  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);  /* Aumenta a sombra */
-  transform: rotate(10deg);  /* Efeito de rotação leve para um toque romântico */
-}
+    .nav-arrows span:hover {
+      background: #ff66b2;
+      color: white;
+      transform: scale(1.1);
+      box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+      transform: rotate(10deg);
+    }
 
-/* Ajustando o estilo da seta anterior e próxima */
-.nav-arrows .previous {
-  transform: rotate(-10deg);  /* Aplica uma rotação diferente para "anterior" */
-}
+    .nav-arrows .previous {
+      transform: rotate(-10deg);
+    }
 
-.nav-arrows .next {
-  transform: rotate(10deg);  /* Aplica uma rotação diferente para "próximo" */
-}
-
+    .nav-arrows .next {
+      transform: rotate(10deg);
+    }
 
     /* Overlay de Login */
-    
     #login-container {
       position: fixed;
       top: 0;
