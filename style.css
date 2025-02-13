@@ -225,6 +225,12 @@ input[type="password"] {
   transition: opacity 1s ease-out; /* Adicionando transição para suavizar o desaparecimento */
 }
 
+/* Quando a classe .hidden for adicionada */
+#loading-container.hidden {
+  opacity: 0;
+  pointer-events: none; /* Impede interações com o elemento */
+}
+
 /* Ocultar o loading após o login (estará oculto após 2 segundos) */
 #loading-container.hidden {
   opacity: 0;
