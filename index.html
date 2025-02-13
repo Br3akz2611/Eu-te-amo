@@ -220,10 +220,8 @@
       <span onclick="nextSlide()">Próximo &#10095;</span>
     </div>
   </div>
-
   <script>
- <script>
-   const loginCorreto = "minha gostosa";
+    const loginCorreto = "minha gostosa";
     const senhaCorreta = "17/07";
 
     document.getElementById("login-button").addEventListener("click", function(event) {
@@ -231,14 +229,18 @@
       const senhaInput = document.getElementById("password-input").value;
 
       if (loginInput === loginCorreto && senhaInput === senhaCorreta) {
+        // Mostra a tela de loading
         document.getElementById("loading-container").style.display = "flex";
-
+        
+        // Simula o carregamento e, depois de 2 segundos, exibe o conteúdo
         setTimeout(function() {
           document.getElementById("loading-container").style.display = "none";
           document.getElementById("login-container").style.display = "none";
           document.getElementById("content").style.display = "block";
-        }, 2000); // Ajustei o tempo de carregamento para 2 segundos
+          showSlide(currentSlide); // Mostra o primeiro slide
+        }, 2000);
       } else {
+        // Mostra a mensagem de erro se o login ou senha estiverem errados
         document.getElementById("error-message").style.display = "block";
       }
     });
@@ -278,6 +280,8 @@
       currentSlide--;
       showSlide(currentSlide);
     }
+</script>
+
 
 </script>
 </body>
