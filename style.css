@@ -234,6 +234,28 @@ input[type="password"] {
   pointer-events: none;  /* Impede interações com o elemento */
 }
 
+/* Ajuste da tela de login e de carregamento */
+#login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 999;
+}
+
+#login-container p {
+  font-size: 1.5rem;
+  color: #d6336c;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Estilos do conteúdo principal */
+#content {
+  display: none;  /* Inicialmente escondido até que o login seja feito */
+}
+
 /* Efeito do cursor piscando */
 @keyframes blink-caret {
   50% {
