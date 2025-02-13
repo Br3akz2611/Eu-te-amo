@@ -388,5 +388,14 @@
       showSlide(currentSlide);
     }
   </script>
+
+  <script>
+  window.onload = function() {
+    // Adiciona a classe 'hidden' após 2 segundos
+    setTimeout(function() {
+      document.getElementById('loading-container').classList.add('hidden');
+    }, 2000); // 2000 ms = 2 segundos
+  }
+</script>
 </body>
 </html>
