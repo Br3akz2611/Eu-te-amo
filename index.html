@@ -340,23 +340,27 @@
   const senhaCorreta = "17/07";
   
   document.getElementById("login-button").addEventListener("click", function() {
-    const loginInput = document.getElementById("login-input").value;
-    const passwordInput = document.getElementById("password-input").value;
+  const loginInput = document.getElementById("login-input").value;
+  const passwordInput = document.getElementById("password-input").value;
+  
+  if (loginInput === loginCorreto && passwordInput === senhaCorreta) {
+    // Exibe a tela de carregamento
+    document.getElementById("loading-container").style.display = "flex"; 
     
-    if (loginInput === loginCorreto && passwordInput === senhaCorreta) {
-      // Mostrar tela de carregamento
-      document.getElementById("loading-container").style.display = "flex";
+    // Espera 2 segundos antes de ocultar a tela de carregamento
+    setTimeout(function() {
+      document.getElementById("loading-container").classList.add("hidden");
       
-      // Após 2 segundos, esconder o carregamento e mostrar o conteúdo
+      // Espera a animação de opacidade terminar antes de esconder o conteúdo de login
       setTimeout(function() {
         document.getElementById("login-container").style.display = "none";
         document.getElementById("content").style.display = "block";
-        document.getElementById("loading-container").style.display = "none";
-      }, 2000);
-    } else {
-      document.getElementById("error-message").style.display = "block";
-    }
-  });
+      }, 1000); // Espera 1 segundo, que é o tempo da transição de opacidade
+    }, 2000); // Tempo de 2 segundos para mostrar o loading
+  } else {
+    document.getElementById("error-message").style.display = "block";
+  }
+});
   </script>
 </body>
 </html>
