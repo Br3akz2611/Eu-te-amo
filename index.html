@@ -339,27 +339,20 @@
   const loginCorreto = "minha gostosa";
   const senhaCorreta = "17/07";
   
-  document.getElementById("login-button").addEventListener("click", function() {
-  const loginInput = document.getElementById("login-input").value;
-  const passwordInput = document.getElementById("password-input").value;
-  
-  if (loginInput === loginCorreto && passwordInput === senhaCorreta) {
-    // Exibe a tela de carregamento
-    document.getElementById("loading-container").style.display = "flex"; 
+ document.getElementById("login-form").addEventListener("submit", function(event) {
+    // Impede o envio do formulário para mostrar a tela de carregamento
+    event.preventDefault();
     
-    // Espera 2 segundos antes de ocultar a tela de carregamento
+    // Mostra a tela de carregamento
+    document.getElementById("loading-container").classList.remove("hidden");
+    
+    // Simulação de uma ação de login (isso pode ser substituído pela sua lógica real de autenticação)
     setTimeout(function() {
-      document.getElementById("loading-container").classList.add("hidden");
-      
-      // Espera a animação de opacidade terminar antes de esconder o conteúdo de login
-      setTimeout(function() {
-        document.getElementById("login-container").style.display = "none";
-        document.getElementById("content").style.display = "block";
-      }, 1000); // Espera 1 segundo, que é o tempo da transição de opacidade
-    }, 2000); // Tempo de 2 segundos para mostrar o loading
-  } else {
-    document.getElementById("error-message").style.display = "block";
-  }
+        // Ocultar a tela de carregamento após 2 segundos (simulando o tempo de processamento)
+        document.getElementById("loading-container").classList.add("hidden");
+        
+        // Aqui você pode adicionar a lógica para redirecionar ou mostrar a tela de sucesso do login
+    }, 2000);
 });
   </script>
 </body>
