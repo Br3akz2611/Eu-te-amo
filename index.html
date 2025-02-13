@@ -344,17 +344,14 @@
   <script>
   const loginCorreto = "minha gostosa";
   const senhaCorreta = "17/07";
-  document.getElementById("login-button").addEventListener("click", function() {
+document.getElementById("login-button").addEventListener("click", function() {
     const loginInput = document.getElementById("login-input").value;
     const passwordInput = document.getElementById("password-input").value;
     if (loginInput === loginCorreto && passwordInput === senhaCorreta) {
       document.getElementById("login-container").style.display = "none";
       document.getElementById("content").style.display = "block";
-    } else {
-      document.getElementById("error-message").style.display = "block";
-    }
-  });
-    // Exibir a tela de carregamento
+      
+      // Exibir a tela de carregamento
       document.getElementById("loading-screen").style.display = "flex";
 
       // Simular um atraso (como se estivesse processando)
@@ -367,8 +364,7 @@
     } else {
       document.getElementById("error-message").style.display = "block";
     }
-  });
-
+});
   let currentSlide = 0;
 
 function showSlide(index) {
