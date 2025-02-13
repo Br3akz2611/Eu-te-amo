@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="style.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
-    
     /* Estilos gerais */
     body {
       font-family: 'Poppins', sans-serif;
@@ -39,118 +38,8 @@
       color: #d6336c;
       font-weight: bold;
     }
-    
-    /* Slider Container */
-    #slider {
-      max-width: 800px;
-      margin: 20px auto;
-      position: relative;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 15px;
-    }
-    
-    .slide {
-      display: none;
-      position: relative;
-    }
 
-    .image-item {
-      background: rgba(255, 182, 193, 0.3);
-      padding: 15px;
-      border-radius: 15px;
-      box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
-      width: 100%;
-      text-align: center;
-      transition: transform 0.5s ease-in-out;
-    }
-    
-    .image-item img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .image-item img:hover {
-      transform: scale(1.05);
-    }
-
-    .image-item figcaption {
-      font-size: 1.1rem;
-      color: #d6336c;
-      font-weight: bold;
-      background: rgba(255,182,193,0.5);
-      padding: 10px;
-      border-radius: 12px;
-      margin-top: 10px;
-      font-style: italic;
-    }
-
-    .last-slide figcaption {
-      font-size: 1.3rem;
-      color: #fff;
-      background: #d6336c;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 2px 2px 12px rgba(0,0,0,0.3);
-    }
-
-    /* Header do Slider */
-    .header-slide {
-      margin-bottom: 20px;
-    }
-
-    .header-slide h1 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 3.5rem;
-      color: #d6336c;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-      margin-bottom: 15px;
-    }
-
-    .header-slide p {
-      font-size: 1.3rem;
-      color: #8b0000;
-      font-weight: 400;
-    }
-
-    .nav-arrows {
-      margin-top: 20px;
-    }
-
-    .nav-arrows span {
-      cursor: pointer;
-      font-family: 'Dancing Script', cursive;
-      font-size: 24px;
-      font-weight: bold;
-      color: #d6336c;
-      background: rgba(255, 255, 255, 0.8);
-      padding: 12px 24px;
-      margin: 0 15px;
-      border-radius: 50%;
-      transition: 0.3s ease-in-out;
-      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .nav-arrows span:hover {
-      background: #ff66b2;
-      color: white;
-      transform: scale(1.1);
-      box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
-      transform: rotate(10deg);
-    }
-
-    .nav-arrows .previous {
-      transform: rotate(-10deg);
-    }
-
-    .nav-arrows .next {
-      transform: rotate(10deg);
-    }
-
+    /* Login Container */
     #login-container {
       position: fixed;
       top: 0;
@@ -191,6 +80,10 @@
       display: none;
     }
 
+    /* Estilos do conteúdo */
+    #content {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -207,7 +100,7 @@
   <div id="loading-container">
     <img src="https://cdn.dribbble.com/userupload/21914642/file/original-b4d018deabd9a26cc531f7faaf3de7ec.gif" alt="Carregando..." class="loading-image">
   </div>
-  
+    
   <!-- Conteúdo protegido -->
   <div id="content" style="display: none;">
     <div id="slider">
@@ -331,7 +224,7 @@
 
   <script>
  <script>
-    const loginCorreto = "minha gostosa";
+   const loginCorreto = "minha gostosa";
     const senhaCorreta = "17/07";
 
     document.getElementById("login-button").addEventListener("click", function(event) {
@@ -340,13 +233,12 @@
 
       if (loginInput === loginCorreto && senhaInput === senhaCorreta) {
         document.getElementById("loading-container").style.display = "flex";
-        
+
         setTimeout(function() {
           document.getElementById("loading-container").style.display = "none";
           document.getElementById("login-container").style.display = "none";
           document.getElementById("content").style.display = "block";
-          showSlide(currentSlide);
-        }, 2000);
+        }, 2000); // Ajustei o tempo de carregamento para 2 segundos
       } else {
         document.getElementById("error-message").style.display = "block";
       }
@@ -387,9 +279,6 @@
       currentSlide--;
       showSlide(currentSlide);
     }
-  </script>
-
-  <script>
   window.onload = function() {
     // Adiciona a classe 'hidden' após 2 segundos
     setTimeout(function() {
