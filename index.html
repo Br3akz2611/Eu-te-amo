@@ -18,6 +18,7 @@
       margin: 0;
       padding: 0;
     }
+
     /* Tela de Carregamento */
     #loading-container {
       position: fixed;
@@ -56,7 +57,6 @@
       position: relative;
     }
 
-    /* Estilos dos slides */
     .image-item {
       background: rgba(255, 182, 193, 0.3);
       padding: 15px;
@@ -89,7 +89,6 @@
       font-style: italic;
     }
 
-    /* Destaque para a última legenda */
     .last-slide figcaption {
       font-size: 1.3rem;
       color: #fff;
@@ -118,7 +117,6 @@
       font-weight: 400;
     }
 
-    /* Setas de navegação */
     .nav-arrows {
       margin-top: 20px;
     }
@@ -153,7 +151,6 @@
       transform: rotate(10deg);
     }
 
-    /* Overlay de Login */
     #login-container {
       position: fixed;
       top: 0;
@@ -167,7 +164,6 @@
       align-items: center;
       z-index: 1000;
       backdrop-filter: blur(10px);
-      border-radius: 20px;
     }
 
     /* Estilos do botão de login */
@@ -199,7 +195,6 @@
 </head>
 <body>
 
-  <!-- Overlay de Login -->
   <div id="login-container">
     <img src="https://github.com/user-attachments/assets/67ad0f71-aa8a-438c-a917-584055765207" alt="Coração" class="heart-image">
     <p>Digite o apelido que eu mais te chamo (login) e a nossa data de namoro (dia/mes) (senha) para acessar:</p>
@@ -209,7 +204,6 @@
     <p id="error-message">Login ou senha incorretos.</p>
   </div>
 
-  <!-- Tela de Carregamento -->
   <div id="loading-container">
     <img src="https://media.tenor.com/O53wM5VicCEAAAAM/heart-loading.gif" alt="Carregando..." class="loading-image">
   </div>
@@ -336,68 +330,63 @@
   </div>
 
   <script>
-  const loginCorreto = "minha gostosa";
-  const senhaCorreta = "17/07";
-  
- document.getElementById("login-form").addEventListener("submit", function(event) {
-    // Impede o envio do formulário para mostrar a tela de carregamento
-    event.preventDefault();
-    
-    // Mostra a tela de carregamento
-    document.getElementById("loading-container").classList.remove("hidden");
-    
-    // Simulação de uma ação de login (isso pode ser substituído pela sua lógica real de autenticação)
-    setTimeout(function() {
-        // Ocultar a tela de carregamento após 2 segundos (simulando o tempo de processamento)
-        document.getElementById("loading-container").classList.add("hidden");
+ <script>
+    const loginCorreto = "minha gostosa";
+    const senhaCorreta = "17/07";
+
+    document.getElementById("login-button").addEventListener("click", function(event) {
+      const loginInput = document.getElementById("login-input").value;
+      const senhaInput = document.getElementById("password-input").value;
+
+      if (loginInput === loginCorreto && senhaInput === senhaCorreta) {
+        document.getElementById("loading-container").style.display = "flex";
         
-        // Aqui você pode adicionar a lógica para redirecionar ou mostrar a tela de sucesso do login
-    }, 2000);
-});
+        setTimeout(function() {
+          document.getElementById("loading-container").style.display = "none";
+          document.getElementById("login-container").style.display = "none";
+          document.getElementById("content").style.display = "block";
+          showSlide(currentSlide);
+        }, 2000);
+      } else {
+        document.getElementById("error-message").style.display = "block";
+      }
+    });
+
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      const slides = document.querySelectorAll(".slide");
+      const nextButton = document.querySelector(".nav-arrows .next");
+      const prevButton = document.querySelector(".nav-arrows .previous");
+
+      if (index >= slides.length) {
+        currentSlide = slides.length - 1;
+      } else if (index < 0) {
+        currentSlide = 0;
+      }
+
+      slides.forEach((slide, i) => {
+        slide.style.display = i === currentSlide ? "block" : "none";
+      });
+
+      if (currentSlide === slides.length - 1) {
+        nextButton.style.display = "none";
+      } else {
+        nextButton.style.display = "inline-block";
+      }
+
+      prevButton.style.display = "inline-block";
+    }
+
+    function nextSlide() {
+      currentSlide++;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide--;
+      showSlide(currentSlide);
+    }
   </script>
-</body>
-</html>
-  let currentSlide = 0;
-
-function showSlide(index) {
-  const slides = document.querySelectorAll(".slide");
-  const nextButton = document.querySelector(".nav-arrows .next");
-  const prevButton = document.querySelector(".nav-arrows .previous");
-
-  // Previne que o índice ultrapasse o número de slides
-  if (index >= slides.length) {
-    currentSlide = slides.length - 1; // Fixa no último slide
-  } else if (index < 0) {
-    currentSlide = 0; // Fixa no primeiro slide
-  }
-
-  slides.forEach((slide, i) => {
-    slide.style.display = i === currentSlide ? "block" : "none";
-  });
-
-  // Lógica para esconder a seta "Próximo" no último slide
-  if (currentSlide === slides.length - 1) {
-    nextButton.style.display = "none"; // Esconde o botão "Próximo"
-  } else {
-    nextButton.style.display = "inline-block"; // Exibe o botão "Próximo"
-  }
-
-  // Sempre exibe a seta "Anterior"
-  prevButton.style.display = "inline-block"; 
-}
-
-
-  function nextSlide() {
-    currentSlide++;
-    showSlide(currentSlide);
-  }
-
-  function prevSlide() {
-    currentSlide--;
-    showSlide(currentSlide);
-  }
-
-  showSlide(currentSlide);
-</script>
 </body>
 </html>
