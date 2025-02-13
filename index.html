@@ -6,8 +6,7 @@
   <title>Eu te amo</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
-    /* Estilos gerais */
+    /* Estilos do corpo e da tela */
     body {
       font-family: 'Poppins', sans-serif;
       text-align: center;
@@ -26,7 +25,7 @@
       width: 100%;
       height: 100%;
       background: rgba(255, 255, 255, 0.8);
-      display: flex;
+      display: none;  /* Agora começa invisível */
       justify-content: center;
       align-items: center;
       z-index: 2000;
@@ -79,7 +78,6 @@
       margin-top: 10px;
       display: none;
     }
-
     /* Estilos do conteúdo */
     #content {
       display: none;
@@ -223,37 +221,41 @@
   <script>
     const loginCorreto = "minha gostosa";
     const senhaCorreta = "17/07";
-document.addEventListener("DOMContentLoaded", function() {
-  // Variáveis
-  const loginForm = document.getElementById('login-form');
-  const loginContainer = document.getElementById('login-container');
-  const loadingContainer = document.getElementById('loading-container');
-  const content = document.getElementById('content');
-  const errorMessage = document.getElementById('error-message');
 
-  // Função para simular o processo de login
-  loginForm.addEventListener('submit', function(event) {
-    event.preventDefault();  // Impede o envio do formulário
+    document.addEventListener("DOMContentLoaded", function() {
+      // Variáveis
+      const loginButton = document.getElementById('login-button');
+      const loginContainer = document.getElementById('login-container');
+      const loadingContainer = document.getElementById('loading-container');
+      const content = document.getElementById('content');
+      const errorMessage = document.getElementById('error-message');
+      const loginInput = document.getElementById('login-input');
+      const passwordInput = document.getElementById('password-input');
 
-    // Exibe a tela de loading
-    loadingContainer.style.display = 'flex';
-    loginContainer.style.display = 'none';  // Esconde o formulário de login
+      loginButton.addEventListener('click', function() {
+        const login = loginInput.value;
+        const senha = passwordInput.value;
 
-    // Simula um delay para o carregamento
-    setTimeout(function() {
-      // Aqui você poderia validar o login (ex: se o usuário e senha estão corretos)
-      // Caso o login seja válido, escondemos a tela de loading e mostramos o conteúdo
+        // Verifica se o login e a senha estão corretos
+        if (login === loginCorreto && senha === senhaCorreta) {
+          // Exibe a tela de loading e esconde o login
+          loadingContainer.style.display = 'flex';
+          loginContainer.style.display = 'none';
 
-      // Esconde a tela de loading após 2 segundos
-      loadingContainer.classList.add("hidden");
-      loginContainer.style.display = "none"; // Esconde o login
-      content.style.display = "block";  // Mostra o conteúdo (seu slider ou conteúdo principal)
-      
-      // Aqui você pode chamar a função para exibir o primeiro slide
-      showSlide(currentSlide);  // Substitua "currentSlide" pela variável de controle do slide
-    }, 2000);  // Simula 2 segundos de carregamento
-  });
+          // Simula um tempo de carregamento de 2 segundos
+          setTimeout(function() {
+            loadingContainer.style.display = 'none';  // Esconde a tela de loading
+            content.style.display = 'block';  // Mostra o conteúdo
 
+            // Aqui você pode exibir o primeiro slide, se necessário
+            // showSlide(currentSlide);
+          }, 2000);
+        } else {
+          // Exibe a mensagem de erro
+          errorMessage.style.display = 'block';
+        }
+      });
+    });
     let currentSlide = 0;
 
     function showSlide(index) {
