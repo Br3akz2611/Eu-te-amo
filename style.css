@@ -209,7 +209,7 @@ input[type="password"] {
   font-family: 'Poppins', sans-serif;
 }
 /* Tela de carregamento */
-#loading-screen {
+#loading-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -222,7 +222,7 @@ input[type="password"] {
   z-index: 999;
 }
 
-#loading-screen img {
+#loading-container img {
   width: 150px;200px 
   animation: pulse 1s infinite; /* Efeito de pulsação */
 }
