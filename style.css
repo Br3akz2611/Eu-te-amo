@@ -220,7 +220,7 @@ input[type="password"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2000;
+  z-index: 4000;
   backdrop-filter: blur(10px);
   opacity: 1;
   visibility: visible;  /* Garante que a visibilidade esteja visível */
