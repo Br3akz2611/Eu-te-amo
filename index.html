@@ -18,25 +18,6 @@
       margin: 0;
       padding: 0;
     }
-    /* Carregando tela de coração */
-    #loading-screen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      backdrop-filter: blur(5px);
-    }
-
-    #loading-screen img {
-      width: 100px;
-      height: 100px;
-    }
     
     /* Slider Container */
     #slider {
@@ -205,11 +186,6 @@
   </style>
 </head>
 <body>
-  <!-- Overlay de Carregamento -->
-  <div id="loading-screen" style="display: none;">
-    <img src="https://gifdb.com/images/high/loading-heart-design-bar-58no2heursachha4.gif" alt="Coração Carregando">
-  </div>
-  
   <!-- Overlay de Login -->
   <div id="login-container">
     <img src="https://github.com/user-attachments/assets/67ad0f71-aa8a-438c-a917-584055765207" alt="Coração" class="heart-image">
@@ -342,58 +318,48 @@
   </div>
 
   <script>
-<script>
   const loginCorreto = "minha gostosa";
   const senhaCorreta = "17/07";
-  
   document.getElementById("login-button").addEventListener("click", function() {
     const loginInput = document.getElementById("login-input").value;
     const passwordInput = document.getElementById("password-input").value;
-    
     if (loginInput === loginCorreto && passwordInput === senhaCorreta) {
-      // Exibir a tela de carregamento
-      document.getElementById("loading-screen").style.display = "flex";
-      
-      // Simular um atraso (como se estivesse processando)
-      setTimeout(function() {
-        // Esconder a tela de carregamento e mostrar o conteúdo
-        document.getElementById("loading-screen").style.display = "none";
-        document.getElementById("login-container").style.display = "none";
-        document.getElementById("content").style.display = "block";
-      }, 2000); // Atraso de 2 segundos
+      document.getElementById("login-container").style.display = "none";
+      document.getElementById("content").style.display = "block";
     } else {
       document.getElementById("error-message").style.display = "block";
     }
   });
-  
+
   let currentSlide = 0;
 
-  function showSlide(index) {
-    const slides = document.querySelectorAll(".slide");
-    const nextButton = document.querySelector(".nav-arrows .next");
-    const prevButton = document.querySelector(".nav-arrows .previous");
+function showSlide(index) {
+  const slides = document.querySelectorAll(".slide");
+  const nextButton = document.querySelector(".nav-arrows .next");
+  const prevButton = document.querySelector(".nav-arrows .previous");
 
-    // Previne que o índice ultrapasse o número de slides
-    if (index >= slides.length) {
-      currentSlide = slides.length - 1; // Fixa no último slide
-    } else if (index < 0) {
-      currentSlide = 0; // Fixa no primeiro slide
-    }
-
-    slides.forEach((slide, i) => {
-      slide.style.display = i === currentSlide ? "block" : "none";
-    });
-
-    // Lógica para esconder a seta "Próximo" no último slide
-    if (currentSlide === slides.length - 1) {
-      nextButton.style.display = "none"; // Esconde o botão "Próximo"
-    } else {
-      nextButton.style.display = "inline-block"; // Exibe o botão "Próximo"
-    }
-
-    // Sempre exibe a seta "Anterior"
-    prevButton.style.display = "inline-block"; 
+  // Previne que o índice ultrapasse o número de slides
+  if (index >= slides.length) {
+    currentSlide = slides.length - 1; // Fixa no último slide
+  } else if (index < 0) {
+    currentSlide = 0; // Fixa no primeiro slide
   }
+
+  slides.forEach((slide, i) => {
+    slide.style.display = i === currentSlide ? "block" : "none";
+  });
+
+  // Lógica para esconder a seta "Próximo" no último slide
+  if (currentSlide === slides.length - 1) {
+    nextButton.style.display = "none"; // Esconde o botão "Próximo"
+  } else {
+    nextButton.style.display = "inline-block"; // Exibe o botão "Próximo"
+  }
+
+  // Sempre exibe a seta "Anterior"
+  prevButton.style.display = "inline-block"; 
+}
+
 
   function nextSlide() {
     currentSlide++;
@@ -406,8 +372,6 @@
   }
 
   showSlide(currentSlide);
-</script>
-
 </script>
 </body>
 </html>
