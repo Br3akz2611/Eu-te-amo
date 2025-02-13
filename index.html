@@ -223,27 +223,36 @@
   <script>
     const loginCorreto = "minha gostosa";
     const senhaCorreta = "17/07";
+document.addEventListener("DOMContentLoaded", function() {
+  // Variáveis
+  const loginForm = document.getElementById('login-form');
+  const loginContainer = document.getElementById('login-container');
+  const loadingContainer = document.getElementById('loading-container');
+  const content = document.getElementById('content');
+  const errorMessage = document.getElementById('error-message');
 
-    document.getElementById("login-button").addEventListener("click", function(event) {
-      const loginInput = document.getElementById("login-input").value;
-      const senhaInput = document.getElementById("password-input").value;
+  // Função para simular o processo de login
+  loginForm.addEventListener('submit', function(event) {
+    event.preventDefault();  // Impede o envio do formulário
 
-      if (loginInput === loginCorreto && senhaInput === senhaCorreta) {
-        // Mostra a tela de loading
-        document.getElementById("loading-container").style.display = "flex";
-        
-        // Simula o carregamento e, depois de 2 segundos, exibe o conteúdo
-        setTimeout(function() {
-          document.getElementById("loading-container").style.display = "none";
-          document.getElementById("login-container").style.display = "none";
-          document.getElementById("content").style.display = "block";
-          showSlide(currentSlide); // Mostra o primeiro slide
-        }, 2000);
-      } else {
-        // Mostra a mensagem de erro se o login ou senha estiverem errados
-        document.getElementById("error-message").style.display = "block";
-      }
-    });
+    // Exibe a tela de loading
+    loadingContainer.style.display = 'flex';
+    loginContainer.style.display = 'none';  // Esconde o formulário de login
+
+    // Simula um delay para o carregamento
+    setTimeout(function() {
+      // Aqui você poderia validar o login (ex: se o usuário e senha estão corretos)
+      // Caso o login seja válido, escondemos a tela de loading e mostramos o conteúdo
+
+      // Esconde a tela de loading após 2 segundos
+      loadingContainer.classList.add("hidden");
+      loginContainer.style.display = "none"; // Esconde o login
+      content.style.display = "block";  // Mostra o conteúdo (seu slider ou conteúdo principal)
+      
+      // Aqui você pode chamar a função para exibir o primeiro slide
+      showSlide(currentSlide);  // Substitua "currentSlide" pela variável de controle do slide
+    }, 2000);  // Simula 2 segundos de carregamento
+  });
 
     let currentSlide = 0;
 
