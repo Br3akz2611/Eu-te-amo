@@ -200,9 +200,11 @@
 <body>
   
   <!-- Tela de Carregamento -->
-   <img src="https://media.tenor.com/O53wM5VicCEAAAAM/heart-loading.gif" alt="Carregando..." class="loading-image">
+  <div id="loading-container">
+    <img src="https://media.tenor.com/O53wM5VicCEAAAAM/heart-loading.gif" alt="Carregando..." class="loading-image">
     <p>Carregando...</p>
   </div>
+
   <!-- Overlay de Login -->
   <div id="login-container">
     <img src="https://github.com/user-attachments/assets/67ad0f71-aa8a-438c-a917-584055765207" alt="Coração" class="heart-image">
@@ -337,17 +339,28 @@
   <script>
   const loginCorreto = "minha gostosa";
   const senhaCorreta = "17/07";
+  
   document.getElementById("login-button").addEventListener("click", function() {
     const loginInput = document.getElementById("login-input").value;
     const passwordInput = document.getElementById("password-input").value;
+    
     if (loginInput === loginCorreto && passwordInput === senhaCorreta) {
-      document.getElementById("login-container").style.display = "none";
-      document.getElementById("content").style.display = "block";
+      // Mostrar tela de carregamento
+      document.getElementById("loading-container").style.display = "flex";
+      
+      // Após 2 segundos, esconder o carregamento e mostrar o conteúdo
+      setTimeout(function() {
+        document.getElementById("login-container").style.display = "none";
+        document.getElementById("content").style.display = "block";
+        document.getElementById("loading-container").style.display = "none";
+      }, 2000);
     } else {
       document.getElementById("error-message").style.display = "block";
     }
   });
-
+  </script>
+</body>
+</html>
   let currentSlide = 0;
 
 function showSlide(index) {
