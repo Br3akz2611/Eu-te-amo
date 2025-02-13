@@ -342,18 +342,18 @@
   </div>
 
   <script>
+<script>
   const loginCorreto = "minha gostosa";
   const senhaCorreta = "17/07";
-document.getElementById("login-button").addEventListener("click", function() {
+  
+  document.getElementById("login-button").addEventListener("click", function() {
     const loginInput = document.getElementById("login-input").value;
     const passwordInput = document.getElementById("password-input").value;
+    
     if (loginInput === loginCorreto && passwordInput === senhaCorreta) {
-      document.getElementById("login-container").style.display = "none";
-      document.getElementById("content").style.display = "block";
-      
       // Exibir a tela de carregamento
       document.getElementById("loading-screen").style.display = "flex";
-
+      
       // Simular um atraso (como se estivesse processando)
       setTimeout(function() {
         // Esconder a tela de carregamento e mostrar o conteúdo
@@ -364,36 +364,36 @@ document.getElementById("login-button").addEventListener("click", function() {
     } else {
       document.getElementById("error-message").style.display = "block";
     }
-});
+  });
+  
   let currentSlide = 0;
 
-function showSlide(index) {
-  const slides = document.querySelectorAll(".slide");
-  const nextButton = document.querySelector(".nav-arrows .next");
-  const prevButton = document.querySelector(".nav-arrows .previous");
+  function showSlide(index) {
+    const slides = document.querySelectorAll(".slide");
+    const nextButton = document.querySelector(".nav-arrows .next");
+    const prevButton = document.querySelector(".nav-arrows .previous");
 
-  // Previne que o índice ultrapasse o número de slides
-  if (index >= slides.length) {
-    currentSlide = slides.length - 1; // Fixa no último slide
-  } else if (index < 0) {
-    currentSlide = 0; // Fixa no primeiro slide
+    // Previne que o índice ultrapasse o número de slides
+    if (index >= slides.length) {
+      currentSlide = slides.length - 1; // Fixa no último slide
+    } else if (index < 0) {
+      currentSlide = 0; // Fixa no primeiro slide
+    }
+
+    slides.forEach((slide, i) => {
+      slide.style.display = i === currentSlide ? "block" : "none";
+    });
+
+    // Lógica para esconder a seta "Próximo" no último slide
+    if (currentSlide === slides.length - 1) {
+      nextButton.style.display = "none"; // Esconde o botão "Próximo"
+    } else {
+      nextButton.style.display = "inline-block"; // Exibe o botão "Próximo"
+    }
+
+    // Sempre exibe a seta "Anterior"
+    prevButton.style.display = "inline-block"; 
   }
-
-  slides.forEach((slide, i) => {
-    slide.style.display = i === currentSlide ? "block" : "none";
-  });
-
-  // Lógica para esconder a seta "Próximo" no último slide
-  if (currentSlide === slides.length - 1) {
-    nextButton.style.display = "none"; // Esconde o botão "Próximo"
-  } else {
-    nextButton.style.display = "inline-block"; // Exibe o botão "Próximo"
-  }
-
-  // Sempre exibe a seta "Anterior"
-  prevButton.style.display = "inline-block"; 
-}
-
 
   function nextSlide() {
     currentSlide++;
@@ -406,6 +406,8 @@ function showSlide(index) {
   }
 
   showSlide(currentSlide);
+</script>
+
 </script>
 </body>
 </html>
