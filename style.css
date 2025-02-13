@@ -208,6 +208,7 @@ input[type="password"] {
   text-align: center;
   font-family: 'Poppins', sans-serif;
 }
+
 /* Tela de Carregamento */
 #loading-container {
   position: fixed;
@@ -222,19 +223,15 @@ input[type="password"] {
   z-index: 2000;
   backdrop-filter: blur(10px);
   opacity: 1;
-  transition: opacity 1s ease-out; /* Adicionando transição para suavizar o desaparecimento */
+  visibility: visible;  /* Garante que a visibilidade esteja visível */
+  pointer-events: auto;  /* Permite interação */
 }
 
 /* Quando a classe .hidden for adicionada */
 #loading-container.hidden {
   opacity: 0;
-  pointer-events: none; /* Impede interações com o elemento */
-}
-
-/* Ocultar o loading após o login (estará oculto após 2 segundos) */
-#loading-container.hidden {
-  opacity: 0;
-  pointer-events: none; /* Para garantir que a tela não bloqueie mais a interação */
+  visibility: hidden;  /* Esconde o elemento */
+  pointer-events: none;  /* Impede interações com o elemento */
 }
 
 /* Efeito do cursor piscando */
