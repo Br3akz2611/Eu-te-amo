@@ -234,7 +234,7 @@ input[type="password"] {
 
 /* Imagem de carregamento */
 #loading-container .loading-image {
-  height: 120px;  /* Ajuste a altura conforme necessário */
+  height: 150px;  /* Ajuste a altura conforme necessário */
   width: auto;   /* A largura será ajustada automaticamente para manter a proporção */
 }
 
