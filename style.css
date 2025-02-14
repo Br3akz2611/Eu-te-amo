@@ -232,6 +232,12 @@ input[type="password"] {
   pointer-events: auto;  /* Permite interação */
 }
 
+/* Imagem de carregamento */
+#loading-container .loading-image {
+  height: 200px;  /* Ajuste a altura conforme necessário */
+  width: auto;   /* A largura será ajustada automaticamente para manter a proporção */
+}
+
 /* Quando a classe .hidden for adicionada */
 #loading-container.hidden {
   opacity: 0;
