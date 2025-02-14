@@ -276,3 +276,24 @@ input[type="password"] {
     margin: 0 10px;  /* Diminui a margem */
   }
 }
+
+.heart-pulse {
+  font-size: 50px;
+  color: #ff3366;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
