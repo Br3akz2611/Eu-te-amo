@@ -302,3 +302,30 @@ input[type="password"] {
     opacity: 1;
   }
 }
+
+/* Media Query para dispositivos móveis */
+@media screen and (max-width: 768px) {
+  #login-container {
+    width: 80%;  /* Diminui a largura do container */
+    height: auto;  /* Ajusta a altura automaticamente */
+    padding: 20px;  /* Ajusta o padding para dar mais espaço */
+  }
+
+  #login-container .heart-image {
+    height: 50px;  /* Diminui a altura da imagem do coração */
+  }
+
+  #login-container input {
+    width: 200px;  /* Diminui a largura dos inputs */
+    padding: 10px 15px;  /* Ajusta o padding */
+  }
+
+  #login-container button {
+    padding: 10px 20px;  /* Ajusta o padding do botão */
+  }
+
+  #login-container p {
+    font-size: 1.2rem;  /* Diminui o tamanho da fonte para textos */
+  }
+}
+
