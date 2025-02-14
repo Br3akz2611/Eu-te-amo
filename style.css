@@ -312,7 +312,7 @@ input[type="password"] {
   }
 
   #login-container .heart-image {
-    height: 50px;  /* Diminui a altura da imagem do coração */
+    height: 70px;  /* Diminui a altura da imagem do coração */
   }
 
   #login-container input {
