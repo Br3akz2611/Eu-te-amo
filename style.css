@@ -153,7 +153,8 @@ body {
 
 #login-container .heart-image {
   height: 100px;  /* Ajuste a altura conforme necessário */
-  width: auto;    /* A largura será ajustada automaticamente para mante
+  width: auto;   /* A largura será ajustada automaticamente para manter a proporção */
+}
 
 /* Estilos dos campos de login */
 #login-container input {
