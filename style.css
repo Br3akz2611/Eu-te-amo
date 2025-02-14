@@ -151,6 +151,10 @@ body {
   text-align: center;
 }
 
+#login-container .heart-image {
+  height: 100px;  /* Ajuste a altura conforme necessário */
+  width: auto;    /* A largura será ajustada automaticamente para mante
+
 /* Estilos dos campos de login */
 #login-container input {
   padding: 12px 20px;
