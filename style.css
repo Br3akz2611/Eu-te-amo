@@ -152,7 +152,7 @@ body {
 }
 
 #login-container .heart-image {
-  height: 250px;  /* Ajuste a altura conforme necessário */
+  height: 330px;  /* Ajuste a altura conforme necessário */
   width: auto;   /* A largura será ajustada automaticamente para manter a proporção */
 }
 
@@ -234,7 +234,7 @@ input[type="password"] {
 
 /* Imagem de carregamento */
 #loading-container .loading-image {
-  height: 200px;  /* Ajuste a altura conforme necessário */
+  height: 120px;  /* Ajuste a altura conforme necessário */
   width: auto;   /* A largura será ajustada automaticamente para manter a proporção */
 }
 
